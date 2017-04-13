@@ -1,0 +1,41 @@
+{
+	"api": "mtop.film.MtopShowAPI.getSoonShowsByCityCode",
+	"data": {
+		"count": "356",
+		"returnCode": "0",
+		"returnValue": [ {
+			"country": "中国",
+			"fantastic": "0",
+			"fromSearch": "false",
+			"id": "207914",
+			"isWant": "false",
+			"openDay": "2017-07-31 00:00:00",
+			"openTime": "2017-07",
+			"orderCount": "0",
+			"poster": "i2/TB1LX0yOXXXXXapaXXXXXXXXXXX_.jpg",
+			"preview": [],
+			"showName": "侠盗联盟",
+			"showNameEn": "The Adventures",
+			"type": "爱情 动作",
+			"wantCount": "593"
+		}, {
+			"country": "中国",
+			"duration": "0",
+			"fantastic": "0",
+			"fromSearch": "false",
+			"id": "205989",
+			"isWant": "false",
+			"openDay": "2017-07-31 00:00:00",
+			"openTime": "2017-07",
+			"orderCount": "0",
+			"poster": "1/TB1vBLuNpXXXXaqXXXXXXXXXXXX_.jpg",
+			"preview": [],
+			"showName": "那时，可爱的她们",
+			"showNameEn": "The Bitter and Sweet Youth",
+			"type": "剧情 喜剧",
+			"wantCount": "455"
+		}]
+	},
+	"ret": ["SUCCESS::调用成功"],
+	"v": "5.0"
+}

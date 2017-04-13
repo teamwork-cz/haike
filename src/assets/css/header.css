@@ -1,0 +1,17 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:c566e3902e7e78af741044bd6dbc2be1:00d5cabb4ec5d506f15b0dbae174f537:db15c9ef488335fef736061bb95bced8$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(header.png);}
+
+.box {width:76px; height:78px; background-position: -0px -0px}
+.car {width:80px; height:66px; background-position: -0px -78px}
+.kefu {width:72px; height:80px; background-position: -0px -144px}
