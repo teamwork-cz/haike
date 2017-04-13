@@ -20,20 +20,27 @@
     <section class="bgw ">
      <div class="flexBox heth40 flex-row flex-main-arount">
       <div>
-        <span class="vm city-name f14">场合</span>
+        <span class="vm city-name f14 ">场合</span>
         <span class="city-arrow-icon vm"></span>
       </div>
        <div>
-        <span class="vm city-name f14">场合</span>
-        <span class="city-arrow-icon vm"></span>
+        <span class="vm city-name f14">销量</span>
+        <span class="arrow-up vm"></span>
       </div>
        <div>
-        <span class="vm city-name f14">场合</span>
-        <span class="city-arrow-icon vm"></span>
+        <span class="vm city-name f14">帅选</span>
+        <span class="select vm"></span>
       </div>
-      </div>
-
+    </div>
     </section>
+    <div class="changhe flexBox flex-row flex-main-arount flex-no-wrap">
+        <div class="flex1 active">酒会/年会</div>
+        <div class="flex1">派对</div>
+        <div class="flex1">婚礼</div>
+        <div class="flex1">晚宴</div>
+    </div>
+
+
 
     <section class="itemofPro mt5">
       <div class="flexBox flex-row flex-main-arount flex-wrap" 
@@ -51,7 +58,7 @@
     
       </div>
     </section>
-
+    <arrowUp></arrowUp>
     </section>
  <!-- </div> -->
 
@@ -87,6 +94,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import { arrowUp } from '../components/'
 
 export default {
   data () {
@@ -147,6 +155,7 @@ export default {
     }
   },
   components: {
+    arrowUp,
   },
   methods: {
       ...mapMutations([

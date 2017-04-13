@@ -10,6 +10,7 @@ import playDate from './cinemaDetail/playDate'
 import playVideo from './playVideo'
 import footerNav from './footerNav'
 import swiperLabel from './home/swiperLabel'
+import arrowUp from './arrowUp/arrowUp'
 
 module.exports = {
 	hot,
@@ -23,5 +24,6 @@ module.exports = {
 	playDate,
 	playVideo,
 	footerNav,
-	swiperLabel
+	swiperLabel,
+	arrowUp
 }

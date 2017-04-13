@@ -898,3 +898,49 @@ a.gray {
 .mint-header.is-fixed{
     z-index: 2
 }
+.arrow-up{
+    background-size: 6px 12px !important;
+    background: #fff url('../images/arrow_up.png') center center no-repeat;
+      height: 14px;
+    width: 6px;
+}
+.select{
+        height: 10px;
+    width: 12px;
+    background-size: 10px 14px !important;
+    background: #fff url('../images/select.png') no-repeat;
+  
+}
+.changhe{
+    width: 100%;
+    background-color: #000;
+    height: 50px;
+    z-index: 5;
+    position: absolute;
+    color: #fff;
+    border-radius: 8px;
+    height: 64px;
+    line-height: 64px;
+    background:rgba(0,0,0,0.6);
+}
+.changhe:before {
+    width: 0;
+    height: 0;
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #000;
+    position: absolute;
+    top: -10px;
+    left: 70px;
+
+}
+.changhe .active{
+    color: #FF4374
+}
+.to-top{
+    height: 35px;
+    width: 35px;
+    background-size: 35px 35px ;
+    background: #fff url('../images/up_to.png') no-repeat;
+}
