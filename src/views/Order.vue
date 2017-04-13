@@ -1,6 +1,6 @@
 <template>
 	<section id="Order">
-		<!-- <city></city> -->
+		<city></city>
 		<cinemaArea></cinemaArea>
 		<cinema></cinema>
 	</section>
@@ -33,6 +33,6 @@ export default{
 }
 </script>
 
-<style>
+<style>  
 </style>
 
