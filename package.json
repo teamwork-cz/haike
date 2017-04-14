@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
+    "axios": "^0.16.1",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.0.0",
@@ -46,6 +47,7 @@
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
     "json-loader": "^0.5.4",
+    "lodash": "^4.17.4",
     "mint-ui": "^2.0.5",
     "opn": "^4.0.2",
     "ora": "^0.3.0",

@@ -4,17 +4,22 @@
   export default {
     name: 'Cart',
 
-    vuex: {
-      getters: {
-        cart: ({
-          index
-        }) => index.cart
-      },
-      actions: {
-        removeItem
-      }
-    },
-
+    // vuex: {
+    //   getters: {
+    //     cart: ({
+    //       index
+    //     }) => index.cart
+    //   },
+    //   actions: {
+    //     removeItem
+    //   }
+    // },
+data(){
+  return{
+    cart:[]
+  }
+  
+},
     computed: {
       'totalPrice': function() {
         let totalPrice = 0
