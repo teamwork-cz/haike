@@ -8,110 +8,6 @@ const requestApi = {
   homeActivities: {
     url: '/item-service/showConfig/home',
     method: 'get'
-  },
-  // 全部订单列表
-  allIndent: {
-    url: '/order-service/orders',
-    method: 'get',
-    params: {}
-  },
-
-  // 订单详情
-  detailIndent: {
-    url: '/order-service/orders',
-    method: 'get',
-    params: {}
-  },
-
-  // 请求状态
-  homeServer: {
-    url: '/member-service/members/state/',
-    method: 'get'
-  },
-
-  // 活动详情
-  activityDetail: {
-    url: '/item-service/item/getItemDetailByItemID/',
-    method: 'get'
-  },
-
-  // 获取验证码
-  regCodeData: {
-    url: '/member-service/passport/codes/phone-uuid',
-    method: 'get'
-  },
-
-  // register submit
-  regSubmit: {
-    url: '/member-service/passport/binding/phone-uuid',
-    method: 'get'
-  },
-
-  // 会员中心个人信息
-  userInfo: {
-    url: '/member-service/members/openid',
-    method: 'get',
-    params: {}
-  },
-
-  // 会员中心订单信息
-  userOrder: {
-    url: '/order-service/orders',
-    method: 'get',
-    params: {}
-  },
-
-  // 积分管理页面
-  integralManager: {
-    url: '/member-service/point/log/openid',
-    method: 'get',
-    params: {}
-  },
-
-  // 地址管理
-  getAddress: {
-    url: '/member-service/address/openid',
-    method: 'get',
-    params: {}
-  },
-
-  // 设为默认
-  setDefault: {
-    url: '/member-service/address/default',
-    method: 'put',
-    params: {}
-  },
-  // 新增地址 or 删除地址 or 编辑地址
-  addAddress: {
-    url: '/member-service/address',
-    method: 'post',
-    params: {}
-  },
-  // 是否已报名
-  isSignup: {
-    // url: '/order-service/participates/member',
-    method: 'get'
-  },
-  // 报名
-  signupData: {
-    // url: 'http://10.61.8.61:10002/item-service/item/getEnrollInfoByItemID',
-    url: '/item-service/item/getEnrollInfoByItemID',
-    method: 'get'
-  },
-  // 提交报名
-  submitSignup: {
-    // url: 'http://10.61.8.116:10002/order-service/participates',
-    url: '/order-service/participates',
-    method: 'post'
-  },
-
-  // 微信jssdk
-  jssdkconfig: {
-    url: 'https://uop-api.opg.cn/weixin-api-service/wechat/jssdk',
-    method: 'get',
-    params: {
-      currentUrl: location.href.split('#')[0]
-    }
   }
 }
 
@@ -135,26 +31,7 @@ export default {
     delete req_obj.apiName
     return $ajax(req_obj)
   },
-  // demo:
-  //  var ps = [
-  //     {
-  //       apiName: 'test',
-  //       params: {
-  //         cao: 'nan'
-  //       }
-  //     },
-  //     {
-  //       apiName: 'test',
-  //       params: {
-  //         cao: 'nan'
-  //       },
-  //       method: 'get'
-  //     }
-  //   ]
-  //   reqData.all(ps, function (res1, res2) {
-  //     console.log(res1.data)
-  //     console.log(res2.data)
-  //   })
+
   all: function (ps, cb) {
     const prs = []
     for (let i = 0; i < ps.length; i++) {
