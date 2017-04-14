@@ -42,19 +42,20 @@ const routes = [
     path: '/no',
     component: NoData,
   },
-  {
-    path: '*',
-    component: NotFound,
-  },
+
   {
     path: '/proInfo/:id',
     name: 'proInfo',
     component: ProInfo,
   },
-  {
+  {name:'cart',
     path: '/cart',
     component: Cart,
   },
+    {
+    path: '*',
+    component: NotFound,
+  }
 ];
 
 const router = new VueRouter({
