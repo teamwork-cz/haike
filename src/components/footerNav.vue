@@ -26,7 +26,7 @@
 	  		</router-link>
 	  	</nav>
       <nav class="nav nav-me" :class="{'cur-page': route === '/me'}">
-        <router-link to="me">
+        <router-link :to="{ name: 'detail', params: { id: '0'}}">
           <div class="nav-icon">
             <img v-show="route !== '/me'" src="../assets/images/eno.svg" alt="">
             <img v-show="route === '/me'" src="../assets/images/eok.svg" alt="">

@@ -127,6 +127,9 @@ a {
 a{
     color:  #666 !important
 }
+.cred{
+    color: #FF3F71;
+}
 .red,
 a.red {
     color: #FF5B84;
@@ -941,6 +944,9 @@ a.gray {
 .to-top{
     height: 35px;
     width: 35px;
-    background-size: 35px 35px ;
-    background: #fff url('../images/up_to.png') no-repeat;
+    background:url('../images/up_to.png') no-repeat;
+    background-size: 35px 35px !important;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
 }

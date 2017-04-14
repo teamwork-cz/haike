@@ -146,8 +146,8 @@
 
             </button>
             <div class="fixedBottom  wp100 bgw">            
-              <mt-button size="normal" class="w130 fr" >立即购买</mt-button>
-              <mt-button size="normal" class="w130 fr" >加入购物袋</mt-button>
+              <!-- <mt-button size="normal" class="w130 fr" >立即购买</mt-button> -->
+              <mt-button size="normal" class="w130 fr" >加入我的衣箱</mt-button>
             </div>
 
             

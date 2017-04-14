@@ -11,6 +11,7 @@ import playVideo from './playVideo'
 import footerNav from './footerNav'
 import swiperLabel from './home/swiperLabel'
 import arrowUp from './arrowUp/arrowUp'
+import filterPro from './filterPro'
 
 module.exports = {
 	hot,
@@ -25,5 +26,6 @@ module.exports = {
 	playVideo,
 	footerNav,
 	swiperLabel,
-	arrowUp
+	arrowUp,
+	filterPro,//筛选
 }

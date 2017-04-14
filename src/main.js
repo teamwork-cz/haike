@@ -35,7 +35,7 @@ const routes = [{
   path : '/mv',
   component : Home
 },{
-  path : '/movie/detail/:id',
+  path : '/module/:id',
   name: 'detail',
   component : proLists
 },{

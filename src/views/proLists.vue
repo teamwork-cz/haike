@@ -40,8 +40,6 @@
         <div class="flex1">晚宴</div>
     </div>
 
-
-
     <section class="itemofPro mt5">
       <div class="flexBox flex-row flex-main-arount flex-wrap" 
        infinite-scroll="loadMore"
@@ -52,49 +50,27 @@
              <router-link :to="{ name: 'proInfo', params: { id:`${item.proId}`}}">
               <img class="width185" v-lazy.container="item.images">
               <div class="title">{{item.name}}</div>
+              <div class="flexBox flex-row flex-main-between f12 p10">
+                <div class="cred">¥388/4天</div>
+                 <div class="gray">市场价¥6000</div>
+
+              </div>
             </router-link>  
-            </div>
-               
-    
+            </div>    
       </div>
     </section>
+    <filterPro></filterPro>
     <arrowUp></arrowUp>
+
     </section>
  <!-- </div> -->
-
-
- 
-
-  
-<!--   <mt-navbar v-model="selected" value="1">
-      <mt-tab-item id="1" >包月换衣</mt-tab-item>
-      <mt-tab-item id="2">option B</mt-tab-item>
-      <mt-tab-item id="3">option C</mt-tab-item>
-    </mt-navbar> -->
-
-
-
-   <!--  <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1">
-        <mt-cell v-for="n in 20" :title="'content ' + n" />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="2">
-        <mt-cell v-for="n in 4" :title="'content ' + n" />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="3">
-        <mt-cell v-for="n in 6" :title="'content ' + n" />
-      </mt-tab-container-item>
-    </mt-tab-container> -->
-
-
-
 
     </section>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
-import { arrowUp } from '../components/'
+import { arrowUp ,filterPro} from '../components/'
 
 export default {
   data () {
@@ -156,6 +132,7 @@ export default {
   },
   components: {
     arrowUp,
+    filterPro
   },
   methods: {
       ...mapMutations([
@@ -209,10 +186,10 @@ image[lazy=loading] {
 }
 .itemofPro .title{
   text-align: left;
-  height: 44px;
+/*  height: 44px;*/
   font-size: 14px;
   padding-left: 10px;
-  line-height: 44px
+  /*line-height: 44px*/
 }
 .bgw{
   background-color: #fff
