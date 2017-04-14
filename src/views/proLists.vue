@@ -7,8 +7,6 @@
        </mt-search>
        <mt-button class="sort sort1" slot="right"></mt-button>
     </div>
-
- <!-- <div class="content"> -->
     <section class="padtop10">
        <div class="wth100 flexBox flex-row flex-main-arount">
         <div class="item border-1px-colred"><div class="label by-label"></div></div>
@@ -59,12 +57,11 @@
             </div>    
       </div>
     </section>
-    <filterPro></filterPro>
+
+    <!-- <filterPro></filterPro> -->
     <arrowUp></arrowUp>
 
     </section>
- <!-- </div> -->
-
     </section>
 </template>
 

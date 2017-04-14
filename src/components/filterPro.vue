@@ -1,8 +1,8 @@
 <template>
   <section style="">
      <div class="mask">
-       <div class="bgw">
-          frfrfr
+       <div class="bgw filterPro">
+          frfrfrfff
        </div>
      </div>
 

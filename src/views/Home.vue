@@ -139,12 +139,12 @@ export default{
   },
   created () {
     this.pushComingList({lists: []})
-    this.requestData('http://47.52.20.67/appMainTop/', (response) => {
+    this.requestData('http://rapapi.org/mockjsdata/17098/appMainBody/l', (response) => {
       let data = response.data
       this.imgs = data.data.data.returnValue
       
     })
-    this.requestData('http://47.52.20.67/appMainBody/l', (response) => {
+    this.requestData('http://rapapi.org/mockjsdata/17098/appMainBody/l', (response) => {
       let data = response.data
       this.hotLists = data.data.data.returnValue
      

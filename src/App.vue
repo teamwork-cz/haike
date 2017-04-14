@@ -28,6 +28,7 @@ export default {
   },
   methods: {
     routeChange () {
+      //可配置底部显示
       let path = this.$route.path
       if (path === '/' || path === '/order' || path === '/me') {
         this.showNav = true

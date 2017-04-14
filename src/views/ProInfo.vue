@@ -4,7 +4,7 @@
 
  // import { changePrice, changeStyle, addItem } from '../vuex/actions'
  import { swiper} from '../components/'
-  export default {
+ export default {
     name: 'ProInfo',
     data() {
       return {
@@ -56,13 +56,15 @@
     this.product.selectesSize=index;
   },
    addPro() {
+  MessageBox.alert('操作成功').then(action => {
 
-      const cartInfo = {
-        proId:  this.product.id,
-        count: 1, 
-      };
+});
+      // const cartInfo = {
+      //   proId:  this.product.id,
+      //   count: 1, 
+      // };
 
-      this.product.cart.push(cartInfo);
+      // this.product.cart.push(cartInfo);
     },
     // [CHANGE_PRICE] (state, storage, price) {
   //   state.iPhone6S.activeStorage = storage
@@ -80,13 +82,13 @@
     },
   },
   created () {
-    this.pushComingList({lists: []})
-    this.requestData('http://47.52.20.67/appMainTop/', (response) => {
-      let data = response.data
-      this.imgs = data.data.data.returnValue
-      this.hotLists = data.data.data.returnValue
+    // this.pushComingList({lists: []})
+    // this.requestData('http://47.52.20.67/appMainTop/', (response) => {
+    //   let data = response.data
+    //   this.imgs = data.data.data.returnValue
+    //   this.hotLists = data.data.data.returnValue
       
-    })
+    // })
   },
   }
 </script>
@@ -138,26 +140,20 @@
                       </li>
                   </ul>
              </div>
-            
-         
-     
-            <button class="" @click="addPro()" >
-              <span class=""></span> 加入购物车ff
-
-            </button>
+               
+      <!--       <button class="" @click="addPro()" >
+              <span class=""></span> 加入购物车
+            </button> -->
             <div class="fixedBottom  wp100 bgw">            
               <!-- <mt-button size="normal" class="w130 fr" >立即购买</mt-button> -->
-              <mt-button size="normal" class="w130 fr" >加入我的衣箱</mt-button>
+              <mt-button size="normal" class="w130 fr "  @click="addPro()">加入我的衣箱</mt-button>
             </div>
-
-            
-
-
-
           </div>
         </div>
       </div> <!-- ./product -->
     </div>
+
+    <MessageBox></MessageBox>
     <!--  <div class="mask"></div> -->
   </div><!-- ./container -->
 </template>
