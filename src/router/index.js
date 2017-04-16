@@ -10,13 +10,23 @@ import CinemaDetail from './../views/CinemaDetail'
 import Me from './../views/Me'
 import NoData from './../views/NoData'
 import NotFound from './../components/404'
-import {Rent, RentDetail, RentOrder} from './views'
+import {Rent, RentDetail, RentOrder, Login, Reg} from './views'
 
 const routes = [
   {
     name: 'index',
     path: '/',
     component: Home
+  },
+  {
+    name: 'login',
+    path: '/login',
+    component: Login
+  },
+  {
+    name: 'reg',
+    path: '/reg',
+    component: Reg
   },
   {
     path: '/mv',

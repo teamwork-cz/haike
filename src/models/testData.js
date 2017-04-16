@@ -1,4 +1,7 @@
-const testData = {}
+const testData = {
+  login: {},
+  reg: {}
+}
 
 export default function (p) {
   return new Promise(function (resolve, reject) {
@@ -24,7 +27,7 @@ export default function (p) {
         response.config = p
         resolve(response)
       },
-      1000
+      3000
     )
   })
 }

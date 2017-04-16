@@ -12,7 +12,9 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "element-ui": "^1.2.7",
+    "lodash.debounce": "^4.0.8",
     "muse-ui": "^2.0.1",
+    "validator": "^7.0.0",
     "vue": "^2.1.0",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.3",
@@ -47,6 +49,8 @@
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
     "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
     "lodash": "^4.17.4",
     "mint-ui": "^2.0.5",
     "opn": "^4.0.2",
