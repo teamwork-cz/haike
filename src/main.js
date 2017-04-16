@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Mint from 'mint-ui'
 import store from './store'
 import router from './router'
-
+import reqData from './models/reqData'
 import VueResource from 'vue-resource'
 import 'mint-ui/lib/style.css'
 import 'assets/css/common.css'
@@ -21,7 +21,11 @@ router.beforeEach((to, from, next) => {
   // store._mutations.pushLoadStack[0]()
   next()
 })
-
+Vue.mixin({
+  created () {
+    this.$reqData = reqData
+  }
+})
 router.afterEach(route => {
   document.body.scrollTop = 0
   document.documentElement.scrollTop = 0

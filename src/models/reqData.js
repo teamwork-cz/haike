@@ -1,13 +1,17 @@
 import axios from 'axios'
 import _ from 'lodash'
 import test from './testData'
-import axiosConfig from './../axiosConfig.js'
+import axiosConfig from './axiosConfig.js'
 let $ajax = axios.create(axiosConfig)
 const requestApi = {
   // 首页活动
-  homeActivities: {
-    url: '/item-service/showConfig/home',
-    method: 'get'
+  login: {
+    url: '/login',
+    method: 'post'
+  },
+  reg: {
+    url: '/reg',
+    method: 'post'
   }
 }
 
