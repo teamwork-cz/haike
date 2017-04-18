@@ -30,7 +30,8 @@ export default {
     routeChange () {
       //可配置底部显示
       let path = this.$route.path
-      if (path === '/' || path === '/order' || path === '/me') {
+      let name = this.$route.name
+      if (path === '/' || path === '/order' || path === '/me'||name==='hiSelect') {
         this.showNav = true
       } else {
         this.showNav = false

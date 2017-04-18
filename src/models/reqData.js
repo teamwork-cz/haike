@@ -12,7 +12,9 @@ const requestApi = {
   reg: {
     url: '/reg',
     method: 'post'
-  }
+  },
+  topSlides: {},
+  bodyHot: {}
 }
 
 function getReqObj (p) {

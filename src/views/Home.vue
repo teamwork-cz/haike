@@ -3,7 +3,7 @@
     <mt-header fixed
                title="嗨克">
       <div slot="left">
-        <mt-button v-link="'/'"
+        <mt-button 
                    class="sprite kefu"></mt-button>
       </div>
   
@@ -31,12 +31,12 @@
         <div class="item ">
           <div class="group group_sale mc"></div>折扣专区</div>
       </div>
-  
+<!--  
       <div class="">
         <router-link :to="{ name: 'detail', params: { id: '0'}}">
           <div class=""></div>
         </router-link>
-      </div>
+      </div>-->
   
       <hot :hotLists="hotLists"></hot>
     </section>
@@ -149,18 +149,52 @@ export default {
   },
   created() {
     this.pushComingList({ lists: [] })
-    this.requestData('http://rapapi.org/mockjsdata/17098/appMainBody/l', (response) => {
-      let data = response.data
-      this.imgs = data.data.data.returnValue
+    console.log(this.$reqData.req)
+    this.$reqData.req({
+      apiName: 'topSlides',
+      baseURL: 'http://rapapi.org',
+      url: '/mockjsdata/17098/appMainTop/l',
+      method: 'get'
+    }).then((res) => {
+      this.clickLoadStatus = false
+      this.completeLoad()
+      console.log(res)
 
+      res = res.data
+      if (res.errno !== 0) {
+        this.$toast(res.msg)
+        return
+      }
+      this.imgs = res.data.data.returnValue
+    }).catch(() => {
+      this.completeLoad()
+      this.clickLoadStatus = false
+      this.$toast('系统异常')
     })
-    this.requestData('http://rapapi.org/mockjsdata/17098/appMainBody/l', (response) => {
-      let data = response.data
-      this.hotLists = data.data.data.returnValue
-
-
-
+    this.$reqData.req({
+      apiName: 'bodyHot',
+      baseURL: 'http://rapapi.org',
+      url: '/mockjsdata/17098/appMainBody/l',
+      method: 'get',
+      params: {
+        
+      }
+    }).then((res) => {
+      this.clickLoadStatus = false
+      this.completeLoad()
+      console.log(res)
+      res = res.data
+      if (res.errno !== 0) {
+        this.$toast(res.msg)
+        return
+      }
+      this.hotLists = res.data.data.returnValue
+    }).catch(() => {
+      this.completeLoad()
+      this.clickLoadStatus = false
+      this.$toast('系统异常')
     })
+
 
     // this.requestData(`/movie/coming/?limit=${this.limit}&offset=${this.offset}`, (response) => {
     //   let data = response.data
