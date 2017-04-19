@@ -1,12 +1,14 @@
 <template>
     <div>
-        <x-input title="姓名"
-                 name="username"
-                 placeholder="请输入姓名"
-                 v-model="name"
-                 is-type="china-name"></x-input>
-        <x-input title="密码"
-                 name="password"
+        <x-input name="phoneNo"
+                 placeholder="请输入手机号"
+                 v-model="phoneNo"
+                 labelWidth=0
+                 type='tel'
+                 required
+                 is-type="china-mobile"></x-input>
+        <x-input name="password"
+                 required
                  placeholder="请输入密码"
                  v-model="password"
                  type='password'></x-input>
@@ -20,7 +22,7 @@ import { XInput, XButton } from 'vux'
 export default {
     data() {
         return {
-            name: '',
+            phoneNo: '',
             password: ''
         }
     },
@@ -41,22 +43,39 @@ export default {
         onClick() {
             if (this.clickLoadStatus)
                 return
+            if (!this.phoneNo || !this.password)
+                //这里可以toast
+                return
             this.clickLoadStatus = true
             this.pushLoadStack()
+
             this.$reqData.req({
-                apiName: 'login'
-            }).then(() => {
+                apiName: 'login',
+                baseURL: 'http://rapapi.org',
+                url: '/mockjsdata/17098/account/login',
+                method: 'post',
+                params: {
+                    phoneNo: this.phoneNo,
+                    pwd: this.password
+                }
+            }).then((res) => {
                 this.clickLoadStatus = false
                 this.completeLoad()
-                
-                sessionStorage.setItem('userSate', JSON.stringify({}))
+                console.log(res)
+                res = res.data
+                if (res.errno !== 0) {
+                    this.$toast(res.msg)
+                    return
+                }
+                sessionStorage.setItem('userSate', JSON.stringify(res))
                 this.$router.replace({ name: this.nextPath })
             }).catch(() => {
                 this.completeLoad()
                 this.clickLoadStatus = false
+                this.$toast('系统异常')
             })
-            console.log(this.name)
-            console.log(this.password)
+            // console.log(this.name)
+            // console.log(this.password)
 
         }
     }

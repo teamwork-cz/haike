@@ -34,8 +34,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/movie/detail/:id',
-    name: 'detail',
+    path: '/hiselect',
+    name: 'hiSelect',
     component: proLists
   },
   {
