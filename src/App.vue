@@ -1,9 +1,11 @@
 <template>
-  <div class="app" :style="{height: '100%'}">
-    <div class="main" :style="{height: '100%'}">
+  <div class="app"
+       :style="{height: '100%'}">
+    <div class="main"
+         :style="{height: '100%'}">
       <router-view></router-view>
     </div>
-     <footer-nav :showNav="showNav"></footer-nav>
+    <footer-nav :showNav="showNav"></footer-nav>
   </div>
 </template>
 
@@ -11,7 +13,7 @@
 import { footerNav } from './components/'
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       direction: 'forward',
       showNav: true
@@ -21,32 +23,33 @@ export default {
     footerNav
   },
   watch: {
-     // 如果路由有变化，会执行该方法
-    '$route': function() {
+    // 如果路由有变化，会执行该方法
+    '$route': function () {
       this.routeChange()
     }
   },
   methods: {
-    routeChange () {
+    routeChange() {
       //可配置底部显示
       let path = this.$route.path
       let name = this.$route.name
-      if (path === '/' || path === '/order' || path === '/me'||name==='hiSelect') {
+      if (path === '/' || path === '/order' || path === '/me' || name === 'hiSelect') {
         this.showNav = true
       } else {
         this.showNav = false
       }
     }
-  },
-  created () {
-    this.routeChange()
   }
+  // ,
+  // created() {
+  //   this.routeChange()
+  // }
 }
 </script>
 
 <style>
-  body {
-    background: #f5f5f5;
-  }
+body {
+  background: #f5f5f5;
+}
 </style>
 

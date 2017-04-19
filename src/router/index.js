@@ -1,10 +1,10 @@
 import VueRouter from 'vue-router'
-  
-import Home from './../views/Home'   //首页
-import proLists from './../views/proLists'   //商品列表——嗨选
 
-import ProInfo from './../views/ProInfo'  //商品详情页面
-import Box from './../views/box'  //衣箱
+import Home from './../views/Home' // 首页
+import proLists from './../views/proLists' // 商品列表——嗨选
+
+import ProInfo from './../views/ProInfo' // 商品详情页面
+import Box from './../views/box' // 衣箱
 import Cart from './../views/Cart'
 import Order from './../views/Order'
 import CinemaDetail from './../views/CinemaDetail'
@@ -62,9 +62,9 @@ const routes = [
     component: ProInfo
   },
   {
-      path:'/box',
-      name:'box',
-      component:Box
+    path: '/box',
+    name: 'box',
+    component: Box
   },
   {
     name: 'rent',

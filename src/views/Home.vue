@@ -149,7 +149,6 @@ export default {
   },
   created() {
     this.pushComingList({ lists: [] })
-    console.log(this.$reqData.req)
     this.$reqData.req({
       apiName: 'topSlides',
       baseURL: 'http://rapapi.org',
