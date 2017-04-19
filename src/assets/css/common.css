@@ -532,6 +532,9 @@ a.gray {
 .border-1px-colred{
  border:1px solid #FF7979;
 }
+.border-1px-colgray{
+ border:1px solid #999;
+}
 /*mint 1px*/ 
 .mint-1px-t {
     background-image: -webkit-linear-gradient(top, #EDEDED, #EDEDED 100%);
@@ -632,6 +635,9 @@ a.gray {
     flex:0 1 auto;
     -webkit-flex:0 1 auto;
 
+}
+.flex3{
+   width: 32%
 }
 
 .flex-hide {
@@ -959,4 +965,12 @@ a.gray {
   background-color: #fff !important;
   color: #333 !important;;
   z-index: 9
+}
+.mint-cell-wrapper{
+    background-image:none !important;
+     border: none;
+}
+.mint-cell:last-child{
+     background-image:none !important;
+     border: none;
 }

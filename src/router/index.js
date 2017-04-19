@@ -6,7 +6,9 @@ import proLists from './../views/proLists'   //商品列表——嗨选
 import ProInfo from './../views/ProInfo'  //商品详情页面
 import Box from './../views/box'  //衣箱
 import Cart from './../views/Cart'
-import Order from './../views/Order'
+import Order from './../views/Order' //订单
+import Bpay from './../views/bpay' //包月付款页面
+import Lpay from './../views/lpay' //包月付款页面
 import CinemaDetail from './../views/CinemaDetail'
 import Me from './../views/Me'
 import NoData from './../views/NoData'
@@ -40,7 +42,18 @@ const routes = [
   },
   {
     path: '/order',
+    name:'orderBox',
     component: Order
+  },
+  {
+    path: '/Bpay',
+    name:'bpay',
+    component: Bpay
+  },
+   {
+    path: '/Lpay',
+    name:'lpay',
+    component: Lpay
   },
   {
     path: '/cinema/detail/:id',
