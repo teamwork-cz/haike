@@ -8,7 +8,7 @@
     </mt-header>
    <section class=" bgw p10 cardList">
        <div class="wth100 flexBox flex-row flex-main-arount gray">
-        <div class="item tc flex3 pt10 active ">
+        <div class="item tc flex3 pt10 cardactive ">
            <div class="f14">月卡</div>
            <div class="f20">￥2543</div>
            <div class="f14">会员期+365天</div>
@@ -28,11 +28,15 @@
  <section class="mt10 p10">
    <div class=" pt20 tc">有效期剩余365天</div>
    <mt-cell  title="原价(499/月x6月)" value="顺丰"></mt-cell>
-   <mt-cell title="长期折扣卡" value="-300" is-link></mt-cell>
+   <mt-cell title="长期折扣卡"  is-link>
+      <span class="cred">-300</span>
+   </mt-cell>
     <mt-cell title="配送费用" value="免费"></mt-cell>
    <mt-cell title="清洗费" value="2017/03/16"></mt-cell>
-    <mt-cell title="优惠券" value="-300" is-link></mt-cell>
-   <mt-cell title="总价" value="￥400323"></mt-cell>
+    <mt-cell title="优惠券"  is-link>
+      <span class="cred">-300</span>
+    </mt-cell>
+   <mt-cell class="cblack f18" title="总价" value="￥400323"></mt-cell>
  </section>
       <div class="fixedBottom wp100  bgw">  
           <div class="f12 pt20 tc"> 手中无衣箱，会员有效期计时自动暂停</div>
@@ -136,7 +140,7 @@ export default {
      color: #999;
      border:1px solid #999;
   }
-   .item .active{
+  .cardactive{
      border:1px solid #FF7979 !important;
      color: #FF7979 !important;
   }

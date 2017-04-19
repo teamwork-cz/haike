@@ -112,6 +112,9 @@ a {
 .f16 {
     font-size: 16px;
 }
+.f18 {
+    font-size: 18px;
+}
 .f20 {
     font-size: 20px;
 }
@@ -128,7 +131,10 @@ a{
     color:  #666 !important
 }
 .cred{
-    color: #FF3F71;
+    color: #FF3F71 !important;;
+}
+.cblack{
+    color: #333 !important;
 }
 .red,
 a.red {
