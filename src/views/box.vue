@@ -1,46 +1,20 @@
 <template>
   <section>
     <mt-header fixed
-               title="嗨克">
+               title="使用中的衣箱">
       <div slot="left">
-        <mt-button v-link="'/'"
-                   class="sprite kefu"></mt-button>
+      
       </div>
-  
-      <mt-button slot="right"
-                 class="sprite car"></mt-button>
-      <mt-button slot="right"
-                 class="sprite box"></mt-button>
     </mt-header>
-    <mt-badge type="error"
-              size="small">99+</mt-badge>
-  
-    <section v-show="selnav"
-             class="content">
-      <swiper :imgs="imgs"></swiper>
-      <div class="labelDecribe"></div>
-  
-      <div class=" flexBox flex-row flex-main-arount flex-main-center bgw pt20 pb20  mt10">
-        <div class="item ">
-          <div class="group group_new mc"></div>新品上市
+      <div class="fixedBottom wp100  bgw">   
+       <div class="flexBox flex-row flex-main-center">
+        <router-link :to="{ name: 'order'}">
+          <mt-button size="normal" class=""  @click="addPro()">寄这个衣箱给我（1/3）</mt-button>
+          </router-link>
+       </div>         
+             
         </div>
-        <div class="item ">
-          <div class="group group_star mc"></div>明星同款</div>
-        <div class="item ">
-          <div class="group group_des mc"></div>设计师</div>
-        <div class="item ">
-          <div class="group group_sale mc"></div>折扣专区</div>
-      </div>
   
-      <div class="">
-        <router-link :to="{ name: 'detail', params: { id: '0'}}">
-          <div class=""></div>
-        </router-link>
-      </div>
-  
-      <hot :hotLists="hotLists"></hot>
-    </section>
-    <!-- <play-video></play-video> -->
   </section>
 </template>
 <script>

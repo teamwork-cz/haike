@@ -56,9 +56,9 @@
     this.product.selectesSize=index;
   },
    addPro() {
-  MessageBox.alert('操作成功').then(action => {
+//   MessageBox.alert('操作成功').then(action => {
 
-});
+// });
       // const cartInfo = {
       //   proId:  this.product.id,
       //   count: 1, 
@@ -82,13 +82,12 @@
     },
   },
   created () {
-    // this.pushComingList({lists: []})
-    // this.requestData('http://47.52.20.67/appMainTop/', (response) => {
-    //   let data = response.data
-    //   this.imgs = data.data.data.returnValue
-    //   this.hotLists = data.data.data.returnValue
+    this.requestData('http://47.52.20.67/appMainTop/', (response) => {
+      let data = response.data
+      this.imgs = data.data.data.returnValue
+      this.hotLists = data.data.data.returnValue
       
-    // })
+    })
   },
   }
 </script>
@@ -110,12 +109,7 @@
     <section class="">
       <swiper :imgs="imgs"></swiper>
     </section>
-    <!-- <play-video></play-video> -->
       <div class="bgw pl10 pr10">
-        <div >
-         <!--  <div class="gallery">
-            <img :src="product.activeStyleUrl" class="img-responsive" alt="">
-          </div> -->
           <div class="detail">
             <div class="pt10 pb10">
                 <h3 class="name "><span v-text="product.name"></span></h3>
@@ -140,17 +134,18 @@
                       </li>
                   </ul>
              </div>
-               
-      <!--       <button class="" @click="addPro()" >
-              <span class=""></span> 加入购物车
-            </button> -->
-            <div class="fixedBottom  wp100 bgw">            
-              <!-- <mt-button size="normal" class="w130 fr" >立即购买</mt-button> -->
-              <mt-button size="normal" class="w130 fr "  @click="addPro()">加入我的衣箱</mt-button>
-            </div>
+           
           </div>
+      
+      </div> 
+       <div class="fixedBottom wp100  bgw">   
+       <div class="flexBox flex-row flex-main-center">
+        <router-link :to="{ name: 'box'}">
+          <mt-button size="normal" class=""  @click="addPro()">加入我的衣箱</mt-button>
+          </router-link>
+       </div>         
+             
         </div>
-      </div> <!-- ./product -->
     </div>
 
     <MessageBox></MessageBox>

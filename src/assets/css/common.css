@@ -275,6 +275,9 @@ a.gray {
 .h200 {
     height: 200px;
 }
+.h350 {
+    height: 350px;
+}
 .h {
     height: 100%;
 }
@@ -894,9 +897,9 @@ a.gray {
     background-color: #ff3f71;
     box-shadow: none;
     border: none;
-    border-radius: 0px;
-    padding: 0px;
-    margin-right: 1px;
+    border-radius: 5px;
+    width: 400px;
+    margin: 15px 8px;
 }
 .mint-header.is-fixed{
     z-index: 2
@@ -949,4 +952,11 @@ a.gray {
     position: fixed;
     right: 10px;
     bottom: 60px;
+}
+.mint-header {
+  height: 44px;
+  font-size: 19px;
+  background-color: #fff !important;
+  color: #333 !important;;
+  z-index: 9
 }

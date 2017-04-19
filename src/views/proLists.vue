@@ -212,16 +212,16 @@ image[lazy=loading] {
 
 
 .mint-search {
-    height: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF !important;;
+    height: 50px !important;
 }
 .mint-searchbar {
-  background-color: #fff;
-  padding: 8px 50px 8px 10px;
+  background-color: #fff !important;;
+  padding: 8px 50px 8px 10px !important;;
 }
 .mint-searchbar-inner {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5 !important;
     border-radius: 6px; 
     flex: 1;
     height: 30px;
