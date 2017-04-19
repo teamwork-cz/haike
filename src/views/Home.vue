@@ -151,8 +151,7 @@ export default {
     this.pushComingList({ lists: [] })
     this.$reqData.req({
       apiName: 'topSlides',
-      baseURL: 'http://rapapi.org',
-      url: '/mockjsdata/17098/appMainTop/l',
+      url: '/appMainTop/l',
       method: 'get'
     }).then((res) => {
       this.clickLoadStatus = false
@@ -172,8 +171,7 @@ export default {
     })
     this.$reqData.req({
       apiName: 'bodyHot',
-      baseURL: 'http://rapapi.org',
-      url: '/mockjsdata/17098/appMainBody/l',
+      url: '/appMainBody/l',
       method: 'get',
       params: {
         

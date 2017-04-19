@@ -1,6 +1,6 @@
 
 export default {
-  baseURL: '',
+  baseURL: 'http://rapapi.org/mockjsdata/17098',
   timeout: 30000,
   method: 'post', // default
   transformRequest: [
