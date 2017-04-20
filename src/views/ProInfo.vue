@@ -10,9 +10,10 @@
     data() {
       return {
         activeStyle: '',
-        type: '', 
+       
         imgs: [],            
         product: {
+          type: 'lifu', //用这个字段判断衣服类型，不同类型，详情页面不同
           name: 'Apple/苹果 iPhone 6S',
           desc: '3D Touch、1200万像素照片、4k视频，强大功能于一身。',
           price: '5288 - 6888',
@@ -70,6 +71,10 @@
           this.goRoute({name:"box"})
           });
     },
+    //立即租赁
+    zulin(){
+      this.goRoute({name:'order'})
+    }
     //试穿说明
     openSC(){
       MessageBox({
@@ -140,17 +145,35 @@
           </div>     
       </div> 
      <!-- 免费试穿 -->
-      <section class="gray  p15 bgw" @click="openSC()">
+      <section class="gray  p15 bgw" @click="openSC()" v-if="product.type=='lifu'">
           <mt-button type="default f14" class="wp100">
              免费试穿
-             <img src="../assets/images/question.png"  slot="icon">
-             
+             <img src="../assets/images/question.png"  slot="icon">           
           </mt-button>
       </section>
+      <section class="bgw mt10 p10">
+         <div class="tc centerText">礼服信息</div>
+         <div class="badgeList mt10">
+           <mt-badge size="small" color="#ccc">礼服</mt-badge>
+            <mt-badge size="small" color="#ccc">礼服</mt-badge>
+            <mt-badge size="small" color="#ccc">礼服</mt-badge>
+            <mt-badge size="small" color="#ccc">礼服</mt-badge>
+            <mt-badge size="small" color="#ccc">礼服</mt-badge>
+            <mt-badge size="small" color="#ccc">礼服</mt-badge>
+         </div>
+         <div class="otherInfo">
+           <mt-cell class="bgw f14" title="标题文字" value="说明文字"></mt-cell>
+           <mt-cell class="bgw f14" title="标题文字" value="说明文字"></mt-cell>
+           <mt-cell class="bgw f14" title="标题文字" value="说明文字"></mt-cell>
+           <mt-cell class="bgw f14" title="标题文字" value="说明文字"></mt-cell>
 
-       <div class="fixedBottom wp100  bgw">   
+         </div>
+      </section>
+
+       <div class="fixedBottom wp100  bgw" >   
        <div class="flexBox flex-row flex-main-center">
-          <mt-button size="normal" class=""  @click="addPro()">加入我的衣箱</mt-button>
+          <mt-button size="normal" class=""  @click="addPro()" v-if="product.type=='baoyue'">加入我的衣箱</mt-button>
+          <mt-button size="normal" class=""  @click="zulin()" v-if="product.type=='lifu'">立即租赁</mt-button>
        </div>         
              
         </div>
