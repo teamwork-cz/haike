@@ -4,6 +4,7 @@
 
  // import { changePrice, changeStyle, addItem } from '../vuex/actions'
  import { swiper} from '../components/'
+ import { MessageBox }  from 'mint-ui'
  export default {
     name: 'ProInfo',
     data() {
@@ -33,14 +34,12 @@
           ],
           selectesSize:'0',
           cart: []    
-
-        }, 
-       
-     
+        },     
       }
     },
  components: {
-  swiper
+  swiper,
+  MessageBox
   },
   methods: {
      ...mapMutations([
@@ -55,44 +54,47 @@
     selectesSize (index) {
     this.product.selectesSize=index;
   },
-   addPro() {
-//   MessageBox.alert('操作成功').then(action => {
-
-// });
-      // const cartInfo = {
-      //   proId:  this.product.id,
-      //   count: 1, 
-      // };
-
-      // this.product.cart.push(cartInfo);
+    goRoute(route) {
+      console.log(this.$router)
+      this.$router.push(route)
     },
-    // [CHANGE_PRICE] (state, storage, price) {
-  //   state.iPhone6S.activeStorage = storage
-  //   state.iPhone6S.price = price
-  //   state.iPhone6S.isSelected = false
-  // },
-  // [REMOVE_ITEM] (state, cartInfo) {
-  //   state.cart.$remove(cartInfo)
-  // }
-
-
+    addPro() {
+      MessageBox({
+          message: '您的衣箱已经满了',
+          showConfirmButton :true,
+          showCancelButton :true,
+          cancelButtonText:'继续逛',
+          confirmButtonText:'去衣箱',
+          confirmButtonClass:'cred'
+        }).then(({ value, action }) => {
+          this.goRoute({name:"box"})
+          });
+    },
+    //试穿说明
+    openSC(){
+      MessageBox({
+       title: '免费试穿',
+       message: '若担心尺码不合适，可多下1单。不合适的服装只需在收到后12小时内告知客服，24小时内提供返回快递单号，即可退还租金和押金。',
+       confirmButtonClass:'buttonRed'
+        });
+    },
     requestData (url, fn) {
       this.pushLoadStack()
       this.$http.get(url).then(fn).then(this.completeLoad)
     },
   },
-  created () {
-    this.requestData('http://47.52.20.67/appMainTop/', (response) => {
-      let data = response.data
-      this.imgs = data.data.data.returnValue
-      this.hotLists = data.data.data.returnValue
-      
-    })
+    created () {
+      // this.requestData('http://47.52.20.67/appMainTop/', (response) => {
+      //   let data = response.data
+      //   this.imgs = data.data.data.returnValue
+      //   this.hotLists = data.data.data.returnValue
+        
+      // })
   },
   }
 </script>
 <template>
-  <div class="container f16">
+  <div class="container f16" id="proInfo">
     <div class="row">
   <section>
           <mt-button  slot="right">单品详情</mt-button>
@@ -135,20 +137,26 @@
                   </ul>
              </div>
            
-          </div>
-      
+          </div>     
       </div> 
+     <!-- 免费试穿 -->
+      <section class="gray  p15 bgw" @click="openSC()">
+          <mt-button type="default f14" class="wp100">
+             免费试穿
+             <img src="../assets/images/question.png"  slot="icon">
+             
+          </mt-button>
+      </section>
+
        <div class="fixedBottom wp100  bgw">   
        <div class="flexBox flex-row flex-main-center">
-        <router-link :to="{ name: 'box'}">
           <mt-button size="normal" class=""  @click="addPro()">加入我的衣箱</mt-button>
-          </router-link>
        </div>         
              
         </div>
     </div>
 
-    <MessageBox></MessageBox>
+
     <!--  <div class="mask"></div> -->
   </div><!-- ./container -->
 </template>
@@ -184,5 +192,18 @@
 ul .active {
    background-color: #FF3F71 !important;
   color: #fff
+}
+.mint-button-icon{
+    height: 13px;
+    width: 13px;
+    position: relative;
+    left: 80px;
+    top: 0px;
+}
+.mint-msgbox-btns{
+  margin:10px !important;
+}
+ .mint-msgbox-message{
+  line-height: 21px !important;
 }
 </style>

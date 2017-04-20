@@ -37,10 +37,9 @@
  </section>
 
  <section class="bgw mt10 p10">
- 	 <mt-cell title="配送方式" value="顺丰"></mt-cell>
- 	 <mt-cell title="预计送达时" value="2017/03/16"></mt-cell>
+   <express></express>
+   <dateTime></dateTime>  
  </section>
-
       <section class="fixedBottom wp100  bgw">   
        <div class="flexBox flex-row flex-main-center">
           <mt-button size="normal" class="" @click="goRoute({name:'bpay'})">提交订单</mt-button>
@@ -51,21 +50,26 @@
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import { dateTime,express } from '../components/'
 export default {
   data() {
     return {
     }
   },
   components: {
-
+    dateTime,
+    express
   },
   methods: {
     ...mapMutations([
   
     ]),
-     goRoute(route) {
+    goRoute(route) {
       console.log(this.$router)
       this.$router.push(route)
+    },
+    openExpress(){
+
     },
     requestData(url, fn) {
       this.pushLoadStack()
@@ -74,7 +78,6 @@ export default {
         fn(res)
       })
     },
-
   },
   created() {
 

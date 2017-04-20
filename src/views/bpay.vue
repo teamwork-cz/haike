@@ -41,7 +41,7 @@
       <div class="fixedBottom wp100  bgw">  
           <div class="f12 pt20 tc"> 手中无衣箱，会员有效期计时自动暂停</div>
      
-         <div class="flexBox flex-row flex-main-center" @click="goRoute({ name: 'orderBox'})"> 
+         <div class="flexBox flex-row flex-main-center" @click="payNext()"> 
             <mt-button size="normal">去支付</mt-button>
          </div>                      
       </div>
@@ -50,6 +50,7 @@
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import { MessageBox }  from 'mint-ui'
 export default {
   data() {
     return {
@@ -75,7 +76,7 @@ export default {
     }
   },
   components: {
-
+    MessageBox
   },
   methods: {
     ...mapMutations([
@@ -90,6 +91,13 @@ export default {
         },
     onValuesChange(picker, values){
       console.log(values[0]+','+values[1])
+        },
+     payNext(){
+      MessageBox({
+        title: '提示',
+        message: '确定执行此操作?',
+        showCancelButton: true
+      });
         },
     requestData(url, fn) {
       this.pushLoadStack()

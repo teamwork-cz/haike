@@ -17,6 +17,7 @@ Vue.use(Mint)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
+
 router.beforeEach((to, from, next) => {
   // store._mutations.pushLoadStack[0]()
   next()

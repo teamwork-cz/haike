@@ -426,6 +426,9 @@ a.gray {
 .pr100 {
     padding-right: 100px;
 }
+.bgw{
+    background-color: #fff !important;
+}
 /*遮罩*/
 .mask {
     position: fixed;
@@ -439,6 +442,12 @@ a.gray {
 .border-radius {
     border-radius: 8px;
     border: 1px solid #EDEDED;
+}
+.buttonRed{
+    background-color: #FF3F71;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
     .border-radius {
@@ -970,7 +979,8 @@ a.gray {
   font-size: 19px;
   background-color: #fff !important;
   color: #333 !important;;
-  z-index: 9
+  z-index: 9;
+  border-bottom: 1px solid #ccc;
 }
 .mint-cell-wrapper{
     background-image:none !important;
