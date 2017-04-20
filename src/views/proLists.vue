@@ -55,106 +55,40 @@
   
     <section class="itemofPro mt5">
       <Baoyue v-if="labelType===1"
-              byLists='proLists'></Baoyue>
-      <div v-if="labelType===2"
-           class="flexBox flex-row flex-main-arount flex-wrap"
-           infinite-scroll="loadMore"
-           infinite-scroll-disabled="loading"
-           infinite-scroll-distance="10">
-  
-        <div class="flex1"
-             v-for="item in proLists">
-          <router-link :to="{ name: 'proInfo', params: { id:`${item.proId}`}}">
-            <img class="width185"
-                 v-lazy.container="item.images">
-            <div class="title">{{item.name}}</div>
-  
-            <div 
-                 class="flexBox flex-row flex-main-between f12 p10">
-              <div class="cred">¥388/4天</div>
-              <div class="gray">市场价¥6000</div>
-  
-            </div>
-          </router-link>
-        </div>
-      </div>
+              :byLists='byLists'></Baoyue>
+      <Lifu v-if="labelType===2"
+            :lfLists='lfLists'></Lifu>
     </section>
   
     <!-- <filterPro></filterPro> -->
     <arrowUp></arrowUp>
-  
-  </section>
   </section>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
 import Baoyue from './Baoyue.vue'
+import Lifu from './Lifu.vue'
 import { arrowUp, filterPro } from './../components/'
 
 export default {
   data() {
     return {
-      labelType: 2,
+      //选中的是哪个tab 包月，礼服，可买
+      labelType: 1,
+      //场合选着是否显示
       showChanghe: false,
       sellCountUp: false,
       value: '',
-      proLists: [
-        {
-          proId: '1',
-          name: '产品1',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          proId: '2',
-          name: '产品2',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品3',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品4',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        }, {
-          name: '产品1',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品2',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品3',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品4',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        }, {
-          name: '产品1',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品2',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品3',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        },
-        {
-          name: '产品4',
-          images: "http://fuss10.elemecdn.com/b/18/0678e57cb1b226c04888e7f244c20jpeg.jpeg"
-        }
-      ]
+      byLists: [],
+      lfLists: []
     }
   },
   components: {
     arrowUp,
     filterPro,
-    Baoyue
+    Baoyue,
+    Lifu
   },
   computed: {
     sellProperty() {
@@ -196,8 +130,11 @@ export default {
           this.$toast(res.msg)
           return
         }
+        if (this.labelType === 1) {
+          this.byLists = res.data.data.returnValue
+        }
         if (this.labelType === 2) {
-          this.proLists = res.data.data.returnValue
+          this.lfLists = res.data.data.returnValue
         }
 
       }).catch(() => {
@@ -208,22 +145,27 @@ export default {
     },
     changeType(type) {
       console.log('test')
-      //包月换衣
-      if (type === 1) {
-
-      }
+      this.reqParams.type = type
       this.labelType = type
+      // this.byLists = []
+      // this.lfLists = []
       this.getHiSelect()
     },
     sellCountChange() {
       this.sellCountUp = !this.sellCountUp
+      //销量查询条件更改
+      this.reqParams.property = this.sellProperty
       this.getHiSelect()
     }
   },
   created() {
     //请求参数
-    this.reqParams = {}
-    // this.getHiSelect()
+    this.reqParams = {
+      size: 10,
+      page: 0,
+      type: 1
+    }
+    this.getHiSelect()
   }
 }
 </script>
