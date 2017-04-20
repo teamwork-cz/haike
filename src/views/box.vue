@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="boxView">
     <mt-header 
                title="使用中的衣箱">
         <div slot="left">
@@ -19,7 +19,7 @@
      <section class="">
       <div class="">衣服状态：未寄出</div>
       <div class="boxContain flexBox flex-col">
-         <div class="box ">
+         <div class="boxItem ">
            <div class="hasPro bgw flexBox flex-row flex-main-start">
                <img src="../assets/images/img.png"></img>
                <div class="flexBox flex-col ">
@@ -30,7 +30,7 @@
            
            
          </div>
-         <div class="box flexBox flex-main-center" >
+         <div class="boxItem flexBox flex-main-center" >
              <div class="hasPro bgw flexBox flex-row flex-main-start">
                <img src="../assets/images/img.png"></img>
                <div class="flexBox flex-col ">
@@ -39,7 +39,7 @@
                </div>
            </div>
          </div>
-          <div class="box flexBox flex-main-center" @click="goRoute({ name: 'hiSelect'})">
+          <div class="boxItem flexBox flex-main-center" @click="goRoute({ name: 'hiSelect'})">
            
          </div>
       </div>
@@ -136,7 +136,7 @@ export default {
     color: #FF3F71 !important;;
     margin-bottom: -1px !important;;
 }
-.box{
+.boxItem{
   
     height: 90px;
     background: #fff url('../assets/images/addboxbg.png') center no-repeat;
