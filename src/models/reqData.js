@@ -14,7 +14,11 @@ const requestApi = {
     method: 'post'
   },
   topSlides: {},
-  bodyHot: {}
+  bodyHot: {},
+  hiSelect: {
+    url: '/search/l',
+    method: 'get'
+  }
 }
 
 function getReqObj (p) {

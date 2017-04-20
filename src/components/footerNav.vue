@@ -4,19 +4,20 @@
 		<section class="footer mint-1px-t"
 		         v-show="showNav">
 			<nav class="nav nav-movie"
+			     @click='goRoute("index")'
 			     :class="{'cur-page': route === '/'}">
-				<router-link to="/">
-					<div class="nav-icon">
-						<img v-show="route !== '/'"
-						     src="../assets/images/hno.svg"
-						     alt="">
-						<img v-show="route === '/'"
-						     src="../assets/images/hok.svg"
-						     alt="">
-					</div>
-				</router-link>
+	
+				<div class="nav-icon">
+					<img v-show="route !== '/'"
+					     src="../assets/images/hno.svg"
+					     alt="">
+					<img v-show="route === '/'"
+					     src="../assets/images/hok.svg"
+					     alt="">
+				</div>
 			</nav>
 			<nav class="nav nav-cinama"
+			     @click='goRoute("hiSelect")'
 			     :class="{'cur-page': routeName === 'hiSelect'}">
 				<div class="nav-icon">
 					<img v-show="route !== '/order'"
@@ -51,8 +52,8 @@
 			</nav>
 		</section>
 		<!--  	<section v-show="!showNav" @click="goBack" style="width: 100%">
-			  		<p class="back"> < </p>
-			  	</section> -->
+							  		<p class="back"> < </p>
+							  	</section> -->
 	</footer>
 </template>
 <script>
@@ -74,6 +75,11 @@ export default {
 	methods: {
 		goBack() {
 			this.$router.back()
+		},
+		goRoute(name) {
+			if (name === this.routeName)
+				return
+			this.$router.replace({ name: name })
 		}
 	}
 }

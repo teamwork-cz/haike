@@ -1,6 +1,7 @@
 const testData = {
   login: {},
-  reg: {}
+  reg: {},
+  hiSelect: {}
 }
 
 export default function (p) {
