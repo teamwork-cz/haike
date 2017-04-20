@@ -149,6 +149,7 @@ export default {
   },
   created() {
     this.pushComingList({ lists: [] })
+    this.pushLoadStack()
     this.$reqData.req({
       apiName: 'topSlides',
       url: '/appMainTop/l',
@@ -169,6 +170,7 @@ export default {
       this.clickLoadStatus = false
       this.$toast('系统异常')
     })
+    this.pushLoadStack()
     this.$reqData.req({
       apiName: 'bodyHot',
       url: '/appMainBody/l',
