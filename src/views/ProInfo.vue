@@ -74,7 +74,7 @@
     //立即租赁
     zulin(){
       this.goRoute({name:'order'})
-    }
+    },
     //试穿说明
     openSC(){
       MessageBox({
