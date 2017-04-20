@@ -7,7 +7,7 @@
           <mt-cell v-bind:title="item.title"
                    v-bind:label="item.title"
                    is-link
-                   value="全部"></mt-cell>
+                   value="全部" class="bgw"></mt-cell>
         </div>
         <figure class="m-img">
           <img class=""

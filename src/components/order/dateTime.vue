@@ -1,7 +1,7 @@
 <template>
 	<section style="">
 	   <div @click="openPicker()">
-       <mt-cell title="预计送达时" class="bgw" is-link >
+       <mt-cell :title="title" class="bgw" is-link >
          <span class="cblack"  v-text="pickerValue"></span>
        </mt-cell>
    </div>
@@ -19,6 +19,7 @@
 <script>
 import { DatetimePicker } from 'mint-ui';
 	export default{
+	props: ['title'],
 	data() {
     return {
       pickerValue:""

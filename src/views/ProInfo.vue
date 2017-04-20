@@ -73,7 +73,7 @@
     },
     //立即租赁
     zulin(){
-      this.goRoute({name:'order'})
+      this.goRoute({name:"orderLf"})
     },
     //试穿说明
     openSC(){

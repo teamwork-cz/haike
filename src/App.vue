@@ -33,7 +33,7 @@ export default {
       //可配置底部显示
       let path = this.$route.path
       let name = this.$route.name
-      if (path === '/' || path === '/order' || path === '/me' || name === 'hiSelect') {
+      if (path === '/' || path === '/me' || name === 'hiSelect') {
         this.showNav = true
       } else {
         this.showNav = false
