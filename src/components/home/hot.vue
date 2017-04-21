@@ -10,13 +10,14 @@
                    value="全部" class="bgw"></mt-cell>
         </div>
         <figure class="m-img">
-          <img class=""
+          <img class="" 
+           @click="goRoute({ name: 'proInfo', params: { id:`${item.id}`}})"
                v-lazy.container="'http://www.hykeyun.com/image?u=' + item.image" />
           <!-- <img v-lazyload="'http://www.hykeyun.com/image?u=' + item.image" />		 -->
         </figure>
         <div class="flexBox flex-row flex-main-arount pt10 pb10">
           <div v-for="itemds in item.appMainBodyDs.content"
-               @click="goRoute({ name: 'proInfo', params: { id:`${itemds.pdsId}`}})"
+               @click="goRoute({ name: 'proInfo', params: { id:`${itemds.id}`}})"
                class="itemds ml10 flex3">
             <div>
               <img class=""
