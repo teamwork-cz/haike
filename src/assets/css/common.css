@@ -875,8 +875,8 @@ a.gray {
 .car {width:20px; height:16px; background-position: -0px -20px;margin-right: 25px}
 .kefu {width:20px; height:20px; background-position: -0px -36px}
 
-.box_black {width:20px; height:16px;background: url(../images/box_black.png);background-size: 100%}
-.car_black {width:20px; height:18px; background: url(../images/car_black.png);margin-right: 25px;background-size: 100%}
+.box_black {width:20px; height:19px;background: url(../images/box_black.png);background-size: 100%}
+.car_black {width:20px; height:21px; background: url(../images/car_black.png);margin-right: 25px;background-size: 100%}
 
 .group{
  
@@ -1018,4 +1018,37 @@ a.gray {
     background:url(../images/img.png) center center no-repeat;
     background-size:cover;
     background-size: 60px 60px;
+}
+.picker-items{
+    background-color: #EDEDED;
+}
+.picker-toolbar{
+    background-color: #F5F5F5;
+}
+.centerText:before
+{ 
+content:"-------";
+color:#ccc;
+padding-right:2px;
+}
+.centerText:after{
+  content:"-------";
+color:#ccc;
+padding-left:2px 
+}
+.rgba{
+    background:rgba(0,0,0,0.5);
+    color: #fff
+}
+.h16{
+    height: 16px
+}
+.mint-cell-wrapper{
+    padding: 0px
+}
+.mint-cell-swipe-button{
+    background: #ff4a79;
+    color: #fff !important;
+    line-height: 90px
+
 }

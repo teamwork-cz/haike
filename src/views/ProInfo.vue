@@ -221,7 +221,7 @@ ul .active {
     width: 13px;
     position: relative;
     left: 80px;
-    top: 0px;
+    top: -3px;
 }
 .mint-msgbox-btns{
   margin:10px !important;

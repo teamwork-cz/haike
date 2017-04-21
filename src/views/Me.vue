@@ -1,30 +1,41 @@
 <template>
 	<section class="me">
 	<div class="mebg">
-		 <mt-header title="" class=" borderbred">
+		 <div class="flexBox flex-row flex-main-end h45 flex-cross-center pr15" >
+      <mt-button class=" car_black"></mt-button>
+      <mt-button class=" box_black"></mt-button>
+    </div>
+		<div class="flexBox flex-row flex-cross-center flex-main-between h100  colorw">
+		<div class="flexBox flex-row flex-cross-center pl10 pr10">
+			 <div class="cir_img"></div>
+			 <div class="flexBox flex-col pl10">
 
-  
-      <mt-button slot="right"
-                 class=" car_black"></mt-button>
-      <mt-button slot="right"
-                 class=" box_black"></mt-button>
-    </mt-header>
-<section>
-	<div class="flexBox flex-row flex-cross-center flex-main-between h100  colorw">
-	<div class="flexBox flex-row flex-cross-center pl10 pr10">
-		 <div class="cir_img"></div>
-		 <div class="flexBox flex-col pl10">
+				  <div class="f18">昵称</div>
+				  <div class="f14">积分：1240</div>
+			</div>
+		</div>
+			
+			<div class="pr10">
+				 <mt-button size="small" class="joinBoder f14">立即加入会员</mt-button>
+			</div>
+		</div>
+			<div class="flexBox flex-row flex-cross-center flex-main-between h45 rgba">
+			  <div class="flexBox flex-col">
+			  	<div class="h16">关注</div>
+			  	<div>12</div>
+			  </div>
+			    <div class="flexBox flex-col">
+			  	<div>粉丝</div>
+			  	<div>13</div>
+			  </div>
+			    <div class="flexBox flex-col">
+			  	<div>被赞</div>
+			  	<div>12</div>
+			  </div>
+				
+			</div>
 
-			  <div class="f18">昵称</div>
-			  <div class="f14">积分：1240</div>
-		</div>
-	</div>
-		
-		<div class="pr10">
-			 <mt-button size="small" class="joinBoder f14">立即加入会员</mt-button>
-		</div>
-	</div>
-</section>
+
 	</div>
 	
 

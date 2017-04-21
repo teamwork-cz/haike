@@ -17,7 +17,7 @@
         <div class="flexBox flex-row flex-main-arount pt10 pb10">
           <div v-for="itemds in item.appMainBodyDs.content"
                @click="goRoute({ name: 'proInfo', params: { id:`${itemds.pdsId}`}})"
-               class="itemds ml10 flex1">
+               class="itemds ml10 flex3">
             <div>
               <img class=""
                    v-lazy.container="'http://www.hykeyun.com/image?u=' + itemds.image" />

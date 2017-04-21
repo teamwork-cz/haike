@@ -39,14 +39,15 @@
 					     alt="">
 				</div>
 			</nav>
-			<nav class="nav nav-me"
-			     :class="{'cur-page': route === '/me'}">
+				<nav class="nav nav-me"
+			     @click='goRoute("me")'
+			     :class="{'cur-page': routeName === 'me'}">
 				<div class="nav-icon">
 					<img v-show="route !== '/me'"
-					     src="../assets/images/eno.svg"
+					     src="../assets/images/mno.svg"
 					     alt="">
 					<img v-show="route === '/me'"
-					     src="../assets/images/eok.svg"
+					     src="../assets/images/mok.svg"
 					     alt="">
 				</div>
 			</nav>

@@ -38,7 +38,7 @@
 
  <section class="bgw mt10 p10">
    <express></express>
-   <dateTime></dateTime>  
+   <dateTime title="预计送达时间"></dateTime>  
  </section>
       <section class="fixedBottom wp100  bgw">   
        <div class="flexBox flex-row flex-main-center">

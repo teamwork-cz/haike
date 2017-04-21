@@ -14,6 +14,7 @@ import arrowUp from './arrowUp/arrowUp'
 import filterPro from './filterPro'
 import dateTime from './order/dateTime'
 import express from './order/express'
+import proItem from './order/proItem'
 module.exports = {
 	hot,
 	coming,
@@ -31,4 +32,5 @@ module.exports = {
 	filterPro,//筛选
 	dateTime,//选择时间
 	express,//express
+	proItem
 }

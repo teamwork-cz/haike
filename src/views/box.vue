@@ -19,34 +19,51 @@
      <section class="">
       <div class="">衣服状态：未寄出</div>
       <div class="boxContain flexBox flex-col">
-         <div class="boxItem ">
-           <div class="hasPro bgw flexBox flex-row flex-main-start">
-               <img src="../assets/images/img.png"></img>
-               <div class="flexBox flex-col ">
-                   <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-                   <div class="gray f12 p10" @click="handleClick()">颜色分类:黄色,尺码:s </div>
+         <div class="boxItem flexBox flex-main-center">
+            <mt-cell-swipe
+              :right="[
+                {
+                  content: '删除',
+                  handler: () => this.$messagebox('delete')
+                }
+              ]">
+                <div class="hasPro bgw flexBox flex-row flex-main-start">
+                  <img src="../assets/images/img.png"></img>
+                  <div class="flexBox flex-col ">
+                     <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+                     <div class="gray f12 p10 pt20" @click="handleClick()" >颜色分类:黄色,尺码:s </div>
+                  </div>
                </div>
-           </div>
-           
-           
+          </mt-cell-swipe>
          </div>
-         <div class="boxItem flexBox flex-main-center" >
-             <div class="hasPro bgw flexBox flex-row flex-main-start">
-               <img src="../assets/images/img.png"></img>
-               <div class="flexBox flex-col ">
-                   <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-                   <div class="gray f12 p10" >颜色分类:黄色,尺码:s </div>
+
+          <div class="boxItem flexBox flex-main-center">
+            <mt-cell-swipe
+              :right="[
+                {
+                  content: '删除',
+                  handler: () => this.$messagebox('delete')
+                }
+              ]">
+                <div class="hasPro bgw flexBox flex-row flex-main-start">
+                  <img src="../assets/images/img.png"></img>
+                  <div class="flexBox flex-col ">
+                     <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+                     <div class="gray f12 p10 pt20" @click="handleClick()">颜色分类:黄色,尺码:s </div>
+                  </div>
                </div>
-           </div>
+          </mt-cell-swipe>
          </div>
-          <div class="boxItem flexBox flex-main-center" @click="goRoute({ name: 'hiSelect'})">
-           
-         </div>
+         <div class="boxItem flexBox flex-main-center" @click="goRoute({ name: 'hiSelect'})"></div>
       </div>
+
+     
+
+
 </section>
   </mt-tab-container-item>
   <mt-tab-container-item id="2">
-   礼服
+<proItem></proItem>
   </mt-tab-container-item>
  
 </mt-tab-container>
@@ -73,6 +90,7 @@
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import{proItem} from '../components/'
 export default {
   data() {
     return {
@@ -98,7 +116,7 @@ export default {
     }
   },
   components: {
-
+proItem
   },
   methods: {
     ...mapMutations([
@@ -151,10 +169,7 @@ export default {
   height: 80px;
   width: 80px
 }
-  .mint-cell{
-    height: 40px !important;;
-    min-height:40px !important;
-  }
+
   .mint-popup-bottom{
     width: 100%
   }

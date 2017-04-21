@@ -136,11 +136,6 @@ export default {
   height: 80px;
   width: 80px
 }
-  .mint-cell{
-    height: 40px !important;
-    min-height:40px !important;
-     background-color: #f5f5f5 !important;
-  }
   .mint-popup-bottom{
     width: 100%
   }
