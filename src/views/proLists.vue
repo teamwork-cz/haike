@@ -1,9 +1,8 @@
 <template>
   <section class="proList">
   
-    <div  @keyup.enter="onEnter">
+    <div @keyup.enter="onEnter">
       <mt-search v-model="searchValue"
-       
                  cancel-text="取消"
                  placeholder="搜索嗨选商品">
       </mt-search>
@@ -117,8 +116,10 @@ export default {
         this.loading = false;
       }, 2500);
     },
-    onEnter(){
-      this.reqParams.title=this.searchValue
+    onEnter() {
+      this.reqParams.title = this.searchValue
+      if (!this.searchValue)
+        return
       this.getHiSelect()
     },
     getHiSelect() {
