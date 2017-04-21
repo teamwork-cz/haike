@@ -11,12 +11,13 @@ import 'assets/css/swiper.min.css'
 import LazyLoad from './components/lazyload'
 
 import App from './App'
-
+Vue.config.keyCodes = {
+  enter: 13
+}
 Vue.use(LazyLoad)
 Vue.use(Mint)
 Vue.use(VueRouter)
 Vue.use(VueResource)
-
 
 router.beforeEach((to, from, next) => {
   // store._mutations.pushLoadStack[0]()

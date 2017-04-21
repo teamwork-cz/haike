@@ -1,8 +1,8 @@
 <template>
   <section class="proList">
   
-    <div>
-      <mt-search v-model="value"
+    <div @keyup.enter="onEnter">
+      <mt-search v-model="searchValue"
                  cancel-text="取消"
                  placeholder="搜索嗨选商品">
       </mt-search>
@@ -79,7 +79,7 @@ export default {
       //场合选着是否显示
       showChanghe: false,
       sellCountUp: false,
-      value: '',
+      searchValue: '',
       byLists: [],
       lfLists: []
     }
@@ -115,6 +115,12 @@ export default {
         }
         this.loading = false;
       }, 2500);
+    },
+    onEnter() {
+      this.reqParams.title = this.searchValue
+      if (!this.searchValue)
+        return
+      this.getHiSelect()
     },
     getHiSelect() {
       this.pushLoadStack()
