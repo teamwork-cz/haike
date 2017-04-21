@@ -3,11 +3,11 @@
     <mt-header fixed
                title="嗨克">
       <div slot="left">
-        <mt-button 
-                   class="sprite kefu"></mt-button>
+        <mt-button class="sprite kefu"></mt-button>
       </div>
   
       <mt-button slot="right"
+                 @click='$router.push("/box")'
                  class="sprite car"></mt-button>
       <mt-button slot="right"
                  class="sprite box"></mt-button>
@@ -31,12 +31,12 @@
         <div class="item ">
           <div class="group group_sale mc"></div>折扣专区</div>
       </div>
-<!--  
-      <div class="">
-        <router-link :to="{ name: 'detail', params: { id: '0'}}">
-          <div class=""></div>
-        </router-link>
-      </div>-->
+      <!--  
+        <div class="">
+          <router-link :to="{ name: 'detail', params: { id: '0'}}">
+            <div class=""></div>
+          </router-link>
+        </div>-->
   
       <hot :hotLists="hotLists"></hot>
     </section>
@@ -176,7 +176,7 @@ export default {
       url: '/appMainBody/l',
       method: 'get',
       params: {
-        
+
       }
     }).then((res) => {
       this.clickLoadStatus = false
@@ -212,7 +212,6 @@ export default {
 </script>
 
 <style>
-
 .selnav {
   color: #ff4d64;
 }
