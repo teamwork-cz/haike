@@ -15,6 +15,9 @@ import Me from './../views/Me'
 import NoData from './../views/NoData'
 import NotFound from './../components/404'
 import {Rent, RentDetail, RentOrder, Login, Reg} from './views'
+import Address from './../views/Address'
+import AddAddress from './../views/AddAdress'
+
 
 const routes = [
   {
@@ -106,6 +109,16 @@ const routes = [
     name: 'cart',
     path: '/cart',
     component: Cart
+  },
+  {
+    name: 'address',
+    path: '/address',
+    component: Address
+  },
+   {
+    name: 'addaddress',
+    path: '/addaddress',
+    component: AddAddress
   },
   {
     path: '*',

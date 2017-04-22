@@ -8,7 +8,7 @@
     </mt-header>
     <section class="adressOrder top44 flexBox flex-row flex-cross-center h100 p10">
      <div class="addressIcon"></div>
- 	  	<div class="flexBox flex-col pl10 ">
+ 	  	<div class="flexBox flex-col pl10 " @click="goRoute({name:'address'})">
                <div class="flexBox flex-row flex-main-between">
                	  <div>收货人：嗨客</div>
                	  <div>139932323223</div>

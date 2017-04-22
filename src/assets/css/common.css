@@ -281,6 +281,9 @@ a.gray {
     height: 50px;
     line-height: 50px
 }
+.h70 {
+    height: 70px;
+}
 .h200 {
     height: 200px;
 }
@@ -460,6 +463,10 @@ a.gray {
 }
 .borderbred{
     border-bottom: 1px solid #ff4d64 !important;
+
+}
+.bordergray{
+    border-bottom: 1px solid #EDEDED !important;
 
 }
 .joinBoder{
@@ -1051,4 +1058,7 @@ padding-left:2px
     color: #fff !important;
     line-height: 90px
 
+}
+.addressDiv{
+    height: 77px
 }
