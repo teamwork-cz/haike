@@ -32,12 +32,6 @@ router.afterEach(route => {
   document.body.scrollTop = 0
   document.documentElement.scrollTop = 0
   window.onscroll = null
-  setTimeout(
-    () => {
-      store._mutations.completeLoad[0]()
-    },
-    100
-  )
 })
 
 var app = new Vue({
