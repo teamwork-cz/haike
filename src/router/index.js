@@ -20,7 +20,7 @@ import AddAddress from './../views/AddAdress'
 
 
 const routes = [
-  {
+  {//首页
     name: 'index',
     path: '/',
     component: Home
@@ -39,7 +39,7 @@ const routes = [
     path: '/mv',
     component: Home
   },
-  {
+  {//嗨选首页
     path: '/hiselect',
     name: 'hiSelect',
     component: proLists
@@ -84,7 +84,7 @@ const routes = [
     name: 'proInfo',
     component: ProInfo
   },
-  {
+  {//购物袋
     path: '/box',
     name: 'box',
     component: Box
