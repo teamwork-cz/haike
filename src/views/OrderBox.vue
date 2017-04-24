@@ -3,7 +3,8 @@
     <mt-header fixed
                title="订单确认">
         <div slot="left">
-         <mt-button v-link="'/'" ><</mt-button> 
+          <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
          </div>
     </mt-header>
     <section class="adressOrder top44 flexBox flex-row flex-cross-center h100 p10">
@@ -31,7 +32,8 @@
                <img src="../assets/images/img.png"></img>
                <div class="flexBox flex-col ">
                    <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-                   <div class="gray f12 p10" @click="handleClick()">颜色分类:黄色,尺码:s </div>
+                   <sizeColor :slot="slots"></sizeColor>
+                   <div class="gray f12 p10">颜色分类:黄色,尺码:s </div>
                </div>
            </div>
  </section>

@@ -1,0 +1,19 @@
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:d308872cc8cc729fdd1787f51d1ff55a:45f36ccb525e41b41526393c0c3a3d3b:c07bab2c028294147a68c48b67cfa28e$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(logon.png);}
+
+.arrow_back {width:22px; height:38px; background-position: -0px -0px}
+.checked {width:41px; height:40px; background-position: -0px -113px}
+.checkno {width:40px; height:40px; background-position: -0px -41px}
+.close_eye {width:36px; height:17px; background-position: -25px -0px}
+.open_eye {width:40px; height:26px; background-position: -0px -84px}

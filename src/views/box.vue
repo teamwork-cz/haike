@@ -3,7 +3,8 @@
     <mt-header 
                title="使用中的衣箱">
         <div slot="left">
-         <mt-button v-link="'/'" ><</mt-button> 
+           <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
          </div>
     </mt-header>
 
@@ -31,6 +32,7 @@
                   <img src="../assets/images/img.png"></img>
                   <div class="flexBox flex-col ">
                      <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+           <!--           <sizecolor :slots="slots"></sizecolor> -->
                      <div class="gray f12 p10 pt20" @click="handleClick()" >颜色分类:黄色,尺码:s </div>
                   </div>
                </div>

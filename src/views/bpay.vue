@@ -3,7 +3,8 @@
     <mt-header 
                title="选择卡类型">
         <div slot="left">
-         <mt-button v-link="'/'" ><</mt-button> 
+           <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
          </div>
     </mt-header>
    <section class=" bgw p10 cardList">

@@ -3,7 +3,8 @@
     <mt-header fixed
                title="新增地址">
       <div slot="left">
-        <mt-button><</mt-button>
+         <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
       </div>
     </mt-header>
     <div class="top44 bgw p10">

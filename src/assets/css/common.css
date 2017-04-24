@@ -877,6 +877,17 @@ a.gray {
     background-size: 20px auto; 
 
 }
+.sprite_login {display:inline-block; overflow:hidden; background-repeat: no-repeat;
+     background-image:url(../images/logon.png);background-size: 32px auto;}
+
+.arrow_back {width:11px; height:19px; background-position: -0px -0px}
+.checked {width:41px; height:40px; background-position: -0px -113px}
+.checkno {width:40px; height:40px; background-position: -0px -41px}
+.close_eye {width:36px; height:17px; background-position: -25px -0px}
+.open_eye {width:40px; height:26px; background-position: -0px -84px}
+
+
+
 
 .box {width:20px; height:19px; background-position: -0px -0px}
 .car {width:20px; height:16px; background-position: -0px -20px;margin-right: 25px}
@@ -907,6 +918,7 @@ a.gray {
   background: #22ACFF url('../images/group_sale.png') center center no-repeat;
    background-size: 30px 27px;
 }
+
 .sort{
     position: absolute;
     top: 14px;
@@ -925,6 +937,30 @@ a.gray {
 .sort2{
     background-size: 16px 100%;
     background: #fff url('../images/sort2.png') center center no-repeat;
+}
+.dai{
+    height: 25px;
+  width:25px;
+}
+.dai1{
+
+    background: #fff url('../images/dai1.png')  no-repeat;
+    background-size:  25px auto;
+}
+.dai2{
+  
+    background: #fff url('../images/dai2.png')  no-repeat;
+      background-size:  25px auto;
+}
+.dai3{
+   
+    background: #fff url('../images/dai3.png')  no-repeat;
+     background-size:  25px auto;
+}
+.dai4{
+    
+    background: #fff url('../images/dai4.png')  no-repeat;
+    background-size:  25px auto;
 }
 .mint-badge.is-error {
     z-index: 9;
@@ -1044,7 +1080,7 @@ color:#ccc;
 padding-left:2px 
 }
 .rgba{
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.1);
     color: #fff
 }
 .h16{

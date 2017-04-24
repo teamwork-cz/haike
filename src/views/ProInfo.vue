@@ -97,8 +97,8 @@ export default {
         <mt-header fixed
                    title="嗨克">
           <div slot="left">
-            <mt-button @click='$router.back()'>
-              <</mt-button>
+            <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
           </div>
           <mt-button @click='$router.push("/box")'
                      slot="right"

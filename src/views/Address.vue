@@ -3,7 +3,8 @@
     <mt-header fixed
                title="收货地址">
       <div slot="left">
-        <mt-button><</mt-button>
+          <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
       </div>
   
       <mt-button slot="right"
