@@ -25,11 +25,11 @@
             <div v-for="(item,index) in boxClothes"
                  class="boxItem flexBox flex-main-center">
               <mt-cell-swipe :right="[
-                                    {
-                                      content: '删除',
-                                      handler:()=>{onDelete(index)}
-                                    }
-                                  ]">
+                                          {
+                                            content: '删除',
+                                            handler:()=>{onDelete(index)}
+                                          }
+                                        ]">
                 <div class="hasPro bgw flexBox flex-row flex-main-start">
                   <img :src="item.imgUrl||imgUrl"></img>
                   <div class="flexBox flex-col ">
@@ -41,8 +41,8 @@
               </mt-cell-swipe>
             </div>
   
-     
-            <div class="boxItem flexBox flex-main-center"
+            <div v-for="i in nullBox"
+                 class="boxItem flexBox flex-main-center"
                  @click="goRoute({ name: 'hiSelect'})"></div>
           </div>
   
@@ -67,7 +67,7 @@
     <div class="fixedBottom wp100  bgw">
       <div class="flexBox flex-row flex-main-center"
            @click="goRoute({ name: 'orderBox'})">
-        <mt-button size="normal">寄这个衣箱给我（1/3）</mt-button>
+        <mt-button size="normal">寄这个衣箱给我（{{this.clothesCount}}/3）</mt-button>
       </div>
     </div>
   
@@ -83,7 +83,7 @@ export default {
       selected: '1',
       popupVisible: false,
       cloth: {},
-      imgUrl:imgUrl
+      imgUrl: imgUrl
     }
   },
   components: {
@@ -94,6 +94,9 @@ export default {
       'boxClothes']),
     postStatus() {
       return '未寄出'
+    },
+    nullBox() {
+      return (3 - this.clothesCount)
     },
     slots() {
       const slots = [
@@ -137,11 +140,11 @@ export default {
     },
     onValuesChange(picker, values) {
       // console.log(picker)
- debugger
+      debugger
       console.log(values[0] + ',' + values[1])
       this.cloth.color = values[0]
       this.cloth.size = values[1]
-     console.log(this.cloth)
+      console.log(this.cloth)
       this.updateClothes({ type: 'update', index: this.cloth.index, cloth: this.cloth })
     },
     requestData(url, fn) {

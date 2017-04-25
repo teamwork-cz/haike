@@ -2,22 +2,26 @@ const UPDATE_CLOTHES = 'UPDATE_CLOTHES'
 const INIT = 'INIT'
 const state = {
   count: 0,
-  clothes: [
-    {
-      title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
-      color: '黄色',
-      size: 'S'
-    },
-    {
-      title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
-      color: '黄色',
-      size: 'S'
-    }
-  ]
+  clothes: []
 }
 const actions = {
   initClothBox ({commit, state}) {
-    commit(INIT)
+    const data = {
+      count: 2,
+      clothes: [
+        {
+          title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
+          color: '黄色',
+          size: 'S'
+        },
+        {
+          title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
+          color: '黄色',
+          size: 'S'
+        }
+      ]
+    }
+    commit(INIT, data)
   },
   updateClothes ({commit, state}, clothes) {
     commit(UPDATE_CLOTHES, clothes)
@@ -37,19 +41,9 @@ const mutations = {
       state.clothes[index] = cloth
     }
   },
-  [INIT] (state) {
-    state.clothes = [
-      {
-        title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
-        color: '黄色',
-        size: 'S'
-      },
-      {
-        title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
-        color: '黄色',
-        size: 'S'
-      }
-    ]
+  [INIT] (state, data) {
+    state.count = data.count
+    state.clothes = data.clothes
   }
 }
 const getters = {
