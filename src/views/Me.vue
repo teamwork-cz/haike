@@ -51,35 +51,35 @@
         <div class="item ">
           <div class="dai dai3 mc"></div>待收货</div>
         <div class="item ">
-          <div class="dai dai4 mc"></div>评价</div>
+          <div class="dai dai4 mc"></div>待评价</div>
       </div>
  </section>
 	
 		<section class="mt10 bgw">
-				<mt-cell  class=" p10 bordergray"
+				<mt-cell  class=" plr10 bordergray"
 			  title="我的优惠券"
 			  to="/no"
 			  icon="cuppon"
 			  is-link
 			  value="">
 			</mt-cell>
-			<mt-cell class='p10'
+			<mt-cell class='plr10'
 			  title="收货地址"
 			  icon="loca"
-			  to="/no"
+			  to="/address"
 			  is-link
-			  value="">
+			  value="" >
 			</mt-cell>
 		</section>
-			<section class="mt10  bgw">
-						<mt-cell  class="p10 bordergray"
+
+						<mt-cell  class="plr10 bgw mt10"
 					  title="我的推广"
 					  to="/no"
 					  icon="share"
 					  is-link
 					  value="">
 					  </mt-cell>
-					<mt-cell class="p10 "
+					<mt-cell class="plr10 bgw mt10"
 					  title="设置"
 					  icon="setting"
 					  to="/no"
@@ -88,30 +88,42 @@
 					  value="">
 					  	
 					  </mt-cell>
-			</section>
+	
 	</section>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
-	data () {
-		return {
-		}
-	},
-	components: {
-	},
-	methods: {
-		...mapMutations([
-		  'pushLoadStack',
-		  'completeLoad'
-		])
-	},
-	created () {
-	}
+  data() {
+    return {
+    }
+  },
+  components: {
+
+  },
+  methods: {
+    ...mapMutations([
+  
+    ]),
+    goRoute(route) {
+      console.log(this.$router)
+      this.$router.push(route)
+    },
+    requestData(url, fn) {
+      this.pushLoadStack()
+      this.$http.get(url).then((res) => {
+        this.completeLoad()
+        fn(res)
+      })
+    },
+  },
+  created() {
+
+
+  }
 }
 </script>
-
 <style>
 .mebg {
   background: #fff url('../assets/images/mebg.png') center no-repeat;

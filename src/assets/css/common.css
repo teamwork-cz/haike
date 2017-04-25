@@ -375,6 +375,9 @@ a.gray {
 .p10 {
     padding: 10px;
 }
+.plr10{
+padding: 0px 10px
+}
 .p15 {
     padding: 15px;
 }
@@ -668,6 +671,12 @@ a.gray {
   .top44{
     margin-top: 44px;
   }
+  .top40{
+    margin-top: 40px;
+  }
+  .top50{
+    margin-top: 50px;
+  }
 .col-50{
     width: 100px
 }
@@ -884,7 +893,7 @@ a.gray {
 .checked {width:41px; height:40px; background-position: -0px -113px}
 .checkno {width:40px; height:40px; background-position: -0px -41px}
 .close_eye {width:36px; height:17px; background-position: -25px -0px}
-.open_eye {width:40px; height:26px; background-position: -0px -84px}
+.open_eye {width:20px; height:18px; background-position: -0px -42px}
 
 
 
@@ -1098,3 +1107,17 @@ padding-left:2px
 .addressDiv{
     height: 77px
 }
+.buttonRed{
+    background-color: #FF3F71;
+    color: #fff}
+.weui-cell{
+    border-bottom: 1px solid #D4D4D4;
+    height: 50px;
+
+}
+.vux-x-input{
+height: 50px;
+line-height: 50px;
+padding:0px 10px;
+font-size: 16px
+    }

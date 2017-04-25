@@ -7,6 +7,14 @@
                  type='tel'
                  required
                  is-type="china-mobile"></x-input>
+        <group title="验证码" class="weui-cells_form">
+            <x-input title="验证码" class="weui-cell_vcode">
+                <img slot="right" class="weui-vcode-img" src="http://weui.github.io/weui/images/vcode.jpg">
+            </x-input>
+            <x-input title="发送验证码" class="weui-vcode">
+                <x-button slot="right" type="primary" mini>发送验证码</x-button>
+            </x-input>
+        </group>
         <x-input name="password"
                  required
                  placeholder="请输入密码"

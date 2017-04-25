@@ -1,7 +1,14 @@
 <template>
-    <div>
+<section>
+    <mt-header fixed title="登录">
+         <div slot="left">
+            <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            </mt-button>
+        </div>
+    </mt-header>
+    <div class="top44 bgw p15">
         <x-input name="phoneNo"
-                 placeholder="请输入手机号"
+                 placeholder="请输入手机号码"
                  v-model="phoneNo"
                  labelWidth=0
                  type='tel'
@@ -12,9 +19,16 @@
                  placeholder="请输入密码"
                  v-model="password"
                  type='password'></x-input>
-        <x-button @click.native="onClick"
-                  type="primary">登录</x-button>
+        <div class="p15 top40">
+              <x-button class="buttonRed " @click.native="onClick"
+                   >登录</x-button>
+        </div>
+         <div class="flexBox flex-row flex-main-arount cred f12 top50">
+            <div>忘记密码</div>
+            <div>注册用户</div>
+        </div>
     </div>
+</section>
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
