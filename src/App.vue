@@ -11,6 +11,7 @@
 
 <script>
 import { footerNav } from './components/'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
   name: 'app',
   data() {
@@ -28,7 +29,11 @@ export default {
       this.routeChange()
     }
   },
+  mounted() {
+    this.initClothBox()
+  },
   methods: {
+    ...mapActions(['initClothBox']),
     routeChange() {
       //可配置底部显示
       let path = this.$route.path

@@ -19,13 +19,18 @@ export default {
     swiper,
     MessageBox
   },
+  computed: {
+    ...mapGetters(['clothesCount'])
+  },
   methods: {
     ...mapMutations([
       'pushLoadStack',
       'completeLoad',
       'showCityList',
-      'pushComingList',
+      'pushComingList'
+
     ]),
+    ...mapActions(['updateClothes']),
     selectesColor(item, index) {
       console.log(item)
       this.sku.color = item
@@ -41,16 +46,31 @@ export default {
       this.$router.push(route)
     },
     addPro() {
-      MessageBox({
-        message: '您的衣箱已经满了',
-        showConfirmButton: true,
-        showCancelButton: true,
-        cancelButtonText: '继续逛',
-        confirmButtonText: '去衣箱',
-        confirmButtonClass: 'cred'
-      }).then(({ value, action }) => {
-        this.goRoute({ name: "box" })
-      });
+      if (this.clothesCount >= 3) {
+        MessageBox({
+          message: '您的衣箱已经满了',
+          showConfirmButton: true,
+          showCancelButton: true,
+          cancelButtonText: '继续逛',
+          confirmButtonText: '去衣箱',
+          confirmButtonClass: 'cred'
+        }).then(({ value, action }) => {
+          this.goRoute({ name: "box" })
+        })
+        return
+      }
+      const cloth = {
+        title: this.product.name,
+        color: this.product.color[this.product.selectesColor].value,
+        size: this.product.size[this.product.selectesSize].value,
+        colors: this.product.color.map(function (itm) {
+          return itm.value
+        }),
+        sizes: this.product.size.map(function (itm) {
+          return itm.value
+        })
+      }
+      this.updateClothes({ type: 'add', cloth: cloth })
     },
     //立即租赁
     zulin() {
@@ -77,7 +97,6 @@ export default {
         this.$toast(res.msg)
         return
       }
-
       this.product = res.data.data.returnValue
       console.log(this.product)
     }).catch(() => {
@@ -106,7 +125,7 @@ export default {
         </mt-header>
         <mt-badge class="single"
                   type="error"
-                  size="small">99+</mt-badge>
+                  size="small">{{this.clothesCount}}</mt-badge>
       </section>
   
       <section class="">

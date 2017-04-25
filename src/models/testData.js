@@ -298,6 +298,18 @@ const testData = {
     total: 1,
     errno: 0,
     msg: 'OK'
+  },
+  // 衣箱
+  box: {
+    data: {
+      data: {
+        title: '衣服描述',
+        color: '黄色',
+        size: 'S'
+      }
+    },
+    errno: 0,
+    msg: 'OK'
   }
 }
 
