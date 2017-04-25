@@ -17,6 +17,7 @@ import NotFound from './../components/404'
 import {Rent, RentDetail, RentOrder, Login, Reg} from './views'
 import Address from './../views/Address'
 import AddAddress from './../views/AddAdress'
+import orderLists from './../views/orderLists'
 
 
 const routes = [
@@ -119,6 +120,11 @@ const routes = [
     name: 'addaddress',
     path: '/addaddress',
     component: AddAddress
+  },
+  {
+    name: 'orders',
+    path: '/orders/:id',
+    component: orderLists
   },
   {
     path: '*',

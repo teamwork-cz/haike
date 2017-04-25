@@ -1,93 +1,99 @@
 <template>
-  <section id="boxView">
+  <section id="orderlistView">
     <mt-header 
-               title="使用中的衣箱">
+               title="我的订单">
         <div slot="left">
            <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
             </mt-button>
          </div>
     </mt-header>
-
-
 <mt-navbar class="page-part p10 "  v-model="selected">
-  <mt-tab-item class="f16" id="1">使用中的衣箱</mt-tab-item>
-  <mt-tab-item class="f16" id="2">礼服订单</mt-tab-item>
+  <mt-tab-item class="f16" id="1">全部订单</mt-tab-item>
+  <mt-tab-item class="f16" id="2">待付款</mt-tab-item>
+   <mt-tab-item class="f16" id="3">待发货</mt-tab-item>
+  <mt-tab-item class="f16" id="4">待收货</mt-tab-item>
+   <mt-tab-item class="f16" id="5">待归还</mt-tab-item>
+  <mt-tab-item class="f16" id="6">待评价</mt-tab-item>
 </mt-navbar>
-
 <!-- tab-container -->
-<mt-tab-container v-model="selected" class="bgw p10">
+<mt-tab-container v-model="selected" class="">
   <mt-tab-container-item id="1">
      <section class="">
-      <div class="">衣服状态：未寄出</div>
-      <div class="boxContain flexBox flex-col">
-         <div class="boxItem flexBox flex-main-center">
-            <mt-cell-swipe
-              :right="[
-                {
-                  content: '删除',
-                  handler: () => this.$messagebox('delete')
-                }
-              ]">
-                <div class="hasPro bgw flexBox flex-row flex-main-start">
-                  <img src="../assets/images/img.png"></img>
-                  <div class="flexBox flex-col ">
-                     <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-           <!--           <sizecolor :slots="slots"></sizecolor> -->
-                     <div class="gray f12 p10 pt20" @click="handleClick()" >颜色分类:黄色,尺码:s </div>
-                  </div>
+      <div class="boxContain flexBox bgw flex-col p10">
+           <mt-cell title="3232738237728732837287" class="bordergray">
+            <span class="cred">待付款</span>
+            <img slot="icon" src="../assets/images/zu.png" style="width:15px;height:15px">
+           </mt-cell>
+           <div class="hasPro  flexBox flex-row flex-main-start pt10 bordergray">
+              <img src="../assets/images/img.png"></img>
+              <div class="flexBox flex-col ">
+                 <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+                 <div class="gray f12 p10 pt20" >颜色分类:黄色,尺码:s </div>
+              </div>
+           </div>   
+           <div class="hasPro  flexBox flex-row flex-main-start pt10">
+               <img src="../assets/images/img.png"></img>
+               <div class="flexBox flex-col ">
+                  <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+                 <div class="gray f12 p10 pt20" >颜色分类:黄色,尺码:s </div>
                </div>
-          </mt-cell-swipe>
-         </div>
-
-          <div class="boxItem flexBox flex-main-center">
-            <mt-cell-swipe
-              :right="[
-                {
-                  content: '删除',
-                  handler: () => this.$messagebox('delete')
-                }
-              ]">
-                <div class="hasPro bgw flexBox flex-row flex-main-start">
-                  <img src="../assets/images/img.png"></img>
-                  <div class="flexBox flex-col ">
-                     <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-                     <div class="gray f12 p10 pt20" @click="handleClick()">颜色分类:黄色,尺码:s </div>
-                  </div>
-               </div>
-          </mt-cell-swipe>
-         </div>
-         <div class="boxItem flexBox flex-main-center" @click="goRoute({ name: 'hiSelect'})"></div>
+           </div>   
       </div>
+   <div class="boxContain flexBox flex-col bgw mt10 p10">
+           <mt-cell title="3232738237728732837287" class="bordergray">
+            <span class="cred">交易成功</span>
+            <img slot="icon" src="../assets/images/zu.png" style="width:15px;height:15px">
+           </mt-cell>
+           <div class="hasPro  flexBox flex-row flex-main-start pt10 bordergray">
+              <img src="../assets/images/img.png"></img>
+              <div class="flexBox flex-col ">
+                 <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+                 <div class="gray f12 p10 pt20" >颜色分类:黄色,尺码:s </div>
+              </div>
+           </div>   
+          <div class="flexBox flex-row flex-main-end h40 mt10">
+            <mt-button type="default" class="order_border_gray">查看物流</mt-button>        
+            <mt-button type="danger"  class="order_border_red">确认收货</mt-button>
+          </div>  
+    </div>
 
-     
+     <div class="boxContain flexBox flex-col bgw mt10 p10">
+           <mt-cell title="3232738237728732837287" class="bordergray">
+            <span class="cred">待归还</span>
+            <img slot="icon" src="../assets/images/zu.png" style="width:15px;height:15px">
+           </mt-cell>
+           <div class="hasPro  flexBox flex-row flex-main-start pt10 bordergray">
+              <img src="../assets/images/img.png"></img>
+              <div class="flexBox flex-col ">
+                 <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
+                 <div class="gray f12 p10 pt20" >颜色分类:黄色,尺码:s </div>
+              </div>
+           </div>   
+          <div class="flexBox flex-row flex-main-end h40 mt10">     
+            <mt-button type="danger"  class="order_border_red">确认归还</mt-button>
+          </div>  
+    </div>
 
-
-</section>
+    </section>
+</mt-tab-container-item>
+</mt-tab-container>
   </mt-tab-container-item>
   <mt-tab-container-item id="2">
-<proItem></proItem>
   </mt-tab-container-item>
- 
+   </mt-tab-container-item>
+  <mt-tab-container-item id="3">
+  </mt-tab-container-item>
+    </mt-tab-container-item>
+  <mt-tab-container-item id="4">
+  </mt-tab-container-item>
+    </mt-tab-container-item>
+  <mt-tab-container-item id="5">
+  </mt-tab-container-item>
+    </mt-tab-container-item>
+  <mt-tab-container-item id="6">
+  </mt-tab-container-item>
+
 </mt-tab-container>
-
-<mt-popup
-  v-model="popupVisible"
-  position="bottom"
-  popup-transition="popup-fade" > 
-  <mt-picker :slots="slots" @change="onValuesChange" ></mt-picker>
-
-</mt-popup>
-
-  
-<div class="f12 gray pt20 tc">查看历史记录>></div>
-
-
-      <div class="fixedBottom wp100  bgw">   
-         <div class="flexBox flex-row flex-main-center" @click="goRoute({ name: 'orderBox'})"> 
-            <mt-button size="normal">寄这个衣箱给我（1/3）</mt-button>
-         </div>                      
-      </div>
-  
   </section>
 </template>
 <script>
@@ -153,7 +159,7 @@ proItem
 <style>
 .mint-navbar .mint-tab-item.is-selected {
     border-bottom: 3px solid #FF3F71 !important;
-    color: #FF3F71 !important;;
+    color: #FF3F71 !important;
     margin-bottom: -1px !important;;
 }
 .boxItem{
@@ -174,5 +180,20 @@ proItem
 
   .mint-popup-bottom{
     width: 100%
+  }
+  .order_border_gray{
+    background-color: #fff !important;
+    border: 1px solid #666 !important;
+    color: #666 !important;
+    font-size: 14px !important;
+    height: 30px !important;
+    margin-right: 15px !important;
+  }
+   .order_border_red{
+    background-color: #fff !important;
+    border: 1px solid #FF3F71 !important;
+    color: #FF3F71 !important;
+    font-size: 14px !important;
+    height: 30px !important;
   }
 </style>

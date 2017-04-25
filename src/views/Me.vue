@@ -38,20 +38,20 @@
  <section class="p10 bgw">
  		<mt-cell class='bordergray'
 		  title="我的订单"
-		  to="/no"
+		  to="/orders/1"
 		  is-link
 		  value="查看全部订单">
 		</mt-cell>
 		  <div class=" flexBox flex-row flex-main-arount flex-main-center bgw pt20 pb20  mt10">
-        <div class="item ">
+        <div class="item " @click="goRoute({ name: 'orders', params: { id:2}})">
           <div class="dai dai1 mc"></div>待付款
         </div>
-        <div class="item ">
+        <div class="item "  @click="goRoute({ name: 'orders', params: { id:3}})">
           <div class="dai dai2 mc"></div>待发货</div>
         <div class="item ">
-          <div class="dai dai3 mc"></div>待收货</div>
+          <div class="dai dai3 mc"  @click="goRoute({ name: 'orders', params: { id:4}})"></div>待收货</div>
         <div class="item ">
-          <div class="dai dai4 mc"></div>待评价</div>
+          <div class="dai dai4 mc"  @click="goRoute({ name: 'orders', params: { id:5}})"></div>待评价</div>
       </div>
  </section>
 	

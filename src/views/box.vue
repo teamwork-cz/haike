@@ -24,7 +24,7 @@
           <div class="">衣服状态：{{postStatus}}</div>
           <div class="boxContain flexBox flex-col">
             <div v-for="(item,index) in boxClothes"
-                 class="boxItem flexBox flex-main-center">
+                 class="boxItem flexBox flex-main-start">
               <mt-cell-swipe :right="[
                                               {
                                                 content: '删除',
@@ -33,7 +33,7 @@
                                             ]">
                 <div class="hasPro bgw flexBox flex-row flex-main-start">
                   <img :src="item.imgUrl||imgUrl"></img>
-                  <div class="flexBox flex-col ">
+                  <div class="flexBox flex-col " style="min-width: 300px">
                     <div class="pl10">{{item.title}}</div>
                     <div class="gray f12 p10 pt20"
                          @click="handleClick(item,index)">颜色分类:{{item.color}},尺码:{{item.size}} </div>
@@ -50,7 +50,7 @@
         </section>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-        <proItem></proItem>
+     <!-- rrrr -->
       </mt-tab-container-item>
   
     </mt-tab-container>
