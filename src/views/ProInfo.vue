@@ -186,7 +186,7 @@ export default {
           <mt-badge size="small"
                     color="#ccc">礼服</mt-badge>
         </div>
-        <div class="otherInfo">
+        <div class="otherInfo mt26">
           <mt-cell class="bgw f14"
                    title="标题文字"
                    value="说明文字"></mt-cell>
