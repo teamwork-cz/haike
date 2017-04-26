@@ -8,6 +8,7 @@ import comingMutations from './coming/mutations'
 import areaMutations from './cinema/mutations'
 import cartMutations from './cart/mutations'
 import clothesBox from './clothesBox'
+import address from './address.js'
 
 Vue.use(Vuex)
 
@@ -74,6 +75,7 @@ export default new Vuex.Store({
     coming,
     cinema,
     cart,
-    clothesBox
+    clothesBox,
+    address
   }
 })
