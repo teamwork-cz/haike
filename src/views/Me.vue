@@ -22,15 +22,15 @@
 			<div class="flexBox flex-row flex-cross-center flex-main-between h45 rgba">
 			  <div class="flex3 tc">
 			  	<div class="h16">关注</div>
-			  	<div>12</div>
+			  	<div class="mt5 ">12</div>
 			  </div>
 			    <div class="flex3 tc">
 			  	<div class="h16">粉丝</div>
-			  	<div>13</div>
+			  	<div class="mt5 ">13</div>
 			  </div>
 			    <div class="flex3 tc">
 			  	<div class="h16">被赞</div>
-			  	<div>12</div>
+			  	<div class="mt5 ">12</div>
 			  </div>			
 			</div>
 	</div>

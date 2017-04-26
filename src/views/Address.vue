@@ -10,27 +10,28 @@
   
       <mt-button slot="right"
                  @click='$router.push("/addaddress")'
-                 class="f14">
+                 class="f16">
         新增地址
       </mt-button>
     </mt-header>
-    <div class="top44 bgw">
+    <div class="top54 bgw ">
       <div class="flex flexBox flex-col ">
         <template v-for="(address,index) in addaddress">
           <mt-cell-swipe :right="[
                                   {
                                     content: '设为默认',
-                                    style: { background: '#ccc', color: '#fff' },
+                                    style: { background: '#ccc', color: '#fff',width:'85px',fontsize:'14px'},
                                     handler: () => {setDefault(index)}
                                   },
                                   { 
                                     content: '删除',
+                                    style: { background: '#FF3F71', color: '#fff',width:'75px',fontsize:'14px' },
                                     handler: () =>{onDelete(index)}
                                   }
                                 ]"
-                         class=" p10 bordergray">
+                         class=" p15 bordergray">
             <div class="wp100">
-              <div class="bgw flexBox flex-row  flex-main-between mt10">
+              <div class="bgw flexBox flex-row  flex-main-between ">
                 <div class="cblack">{{address.name}}</div>
                 <div class="cblack">{{address.tel}}</div>
               </div>
@@ -89,7 +90,17 @@ export default {
 }
 
 .default_a:before {
-  content: "[设为默认]";
-  color: red
+  content: "[默认地址]";
+  color: #FF3F71
 }
+.mint-cell-title{
+  flex: none !important;
+}
+.mint-cell-value{
+  width: 100%
+}
+.mint-cell-swipe-button{
+  text-align: center;
+}
+
 </style>

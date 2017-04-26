@@ -22,7 +22,7 @@
       <mt-tab-container-item id="1">
         <section class="">
           <div class="">衣服状态：{{postStatus}}</div>
-          <div class="boxContain flexBox flex-col">
+          <div class="boxContain flexBox flex-col mt10">
             <div v-for="(item,index) in boxClothes"
                  class="boxItem flexBox flex-main-start">
               <mt-cell-swipe :right="[
@@ -33,10 +33,13 @@
                                             ]">
                 <div class="hasPro bgw flexBox flex-row flex-main-start">
                   <img :src="item.imgUrl||imgUrl"></img>
-                  <div class="flexBox flex-col " style="min-width: 300px">
+                  <div class="flexBox flex-col ">
                     <div class="pl10">{{item.title}}</div>
-                    <div class="gray f12 p10 pt20"
-                         @click="handleClick(item,index)">颜色分类:{{item.color}},尺码:{{item.size}} </div>
+                    <div class="gray f12 p10 pt20 flexBox flex-row flex-main-between"
+                         @click="handleClick(item,index)">
+                         <div>颜色分类:{{item.color}},尺码:{{item.size}} </div>
+                         <div class="arrow_down_right"></div>
+                         </div>
                   </div>
                 </div>
               </mt-cell-swipe>
@@ -180,7 +183,12 @@ export default {
   background-size: 100%;
   margin: 10px 5px;
 }
-
+.arrow_down_right{
+   width: 12px;
+   height: 6px;
+    background: #fff url('../assets/images/arrow_down.png') center no-repeat;
+    background-size: 100%;
+}
 .hasPro {
   height: 100px;
 }

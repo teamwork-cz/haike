@@ -223,7 +223,7 @@ const testData = {
     msg: 'ok',
     total: 1
   },
-  detail: {
+  detail: {  
     data: {
       api: 'hyke.shop',
       data: {

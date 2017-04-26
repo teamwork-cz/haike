@@ -15,6 +15,8 @@ import filterPro from './filterPro'
 import dateTime from './order/dateTime'
 import express from './order/express'
 import addressPicker from './address/addressPicker'
+import header from './header'
+
 module.exports = {
 	hot,
 	coming,
@@ -33,4 +35,5 @@ module.exports = {
 	dateTime,//选择时间
 	express,//express
 	addressPicker,  //地址picker
+	header,
 }
