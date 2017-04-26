@@ -1,7 +1,8 @@
-const UPDATE_CLOTHES = 'UPDATE_CLOTHES'
+const UPDATE_ADDRESSES = 'UPDATE_ADDRESSES'
 const INIT_ADDRESS = 'INIT_ADDRESS'
 const state = {
-  adress: [
+  address_is_init: false,
+  addresses: [
     {
       defaultFlag: true,
       userId: '402882d05b7c76d1015b7c7b25d20000',
@@ -28,7 +29,7 @@ const actions = {
   initClothBox ({commit, state}) {
     const data = {
       count: 2,
-      clothes: [
+      addresses: [
         {
           title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
           color: '黄色',
@@ -43,35 +44,37 @@ const actions = {
     }
     commit(INIT_ADDRESS, data)
   },
-  updateClothes ({commit, state}, clothes) {
-    commit(UPDATE_CLOTHES, clothes)
+  updateaddresses ({commit, state}, addresses) {
+    commit(UPDATE_ADDRESSES, addresses)
   }
 }
 const mutations = {
-  [UPDATE_CLOTHES] (state, {type, index, cloth}) {
+  [UPDATE_ADDRESSES] (state, {type, index, cloth}) {
     if (type === 'del') {
-      state.clothes.splice(index, 1)
+      state.addresses.splice(index, 1)
       --state.count
     }
     if (type === 'add') {
       ++state.count
-      state.clothes.push(cloth)
+      state.addresses.push(cloth)
     }
     if (type === 'update') {
-      state.clothes[index] = cloth
+      state.addresses[index] = cloth
     }
   },
   [INIT_ADDRESS] (state, data) {
     state.count = data.count
-    state.clothes = data.clothes
+    state.addresses = data.addresses
   }
 }
 const getters = {
-  clothesCount: state => {
-    return state.count
+  defaultAddress: state => {
+    return state.addresses.some(function (addr) {
+      return addr.defaultFlag
+    })
   },
-  boxClothes: state => {
-    return state.clothes
+  boxaddresses: state => {
+    return state.ADDRESSES
   }
 }
 export default {
