@@ -5,7 +5,7 @@ const state = {
   addresses: []
 }
 const actions = {
-  initClothBox ({commit, state}) {
+  initAddresses ({commit, state}) {
     const data = {
       address_is_init: true,
       addresses: [
@@ -60,7 +60,7 @@ const mutations = {
 }
 const getters = {
   defaultAddress: state => {
-    return state.addresses.some(function (addr) {
+    return state.addresses.find(function (addr) {
       return addr.defaultFlag
     })
   },

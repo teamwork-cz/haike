@@ -31,9 +31,10 @@ export default {
   },
   mounted() {
     this.initClothBox()
+    this.initAddresses()
   },
   methods: {
-    ...mapActions(['initClothBox']),
+    ...mapActions(['initClothBox','initAddresses']),
     routeChange() {
       //可配置底部显示
       let path = this.$route.path
