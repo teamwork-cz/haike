@@ -129,7 +129,6 @@ export default {
   methods: {
     ...mapActions(['updateClothes']),
     onDelete(index) {
-      debugger
       this.updateClothes({ type: 'del', index: index })
       console.log('del' + index)
     },
@@ -144,7 +143,6 @@ export default {
     },
     onValuesChange(picker, values) {
       // console.log(picker)
-      debugger
       console.log(values[0] + ',' + values[1])
       this.cloth.color = values[0]
       this.cloth.size = values[1]

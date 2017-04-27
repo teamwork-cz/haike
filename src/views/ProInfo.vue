@@ -20,7 +20,21 @@ export default {
     MessageBox
   },
   computed: {
-    ...mapGetters(['clothesCount'])
+    ...mapGetters(['clothesCount']),
+    cloth() {
+      const cloth = {
+        title: this.product.name,
+        color: this.product.color[this.product.selectesColor].value,
+        size: this.product.size[this.product.selectesSize].value,
+        colors: this.product.color.map(function (itm) {
+          return itm.value
+        }),
+        sizes: this.product.size.map(function (itm) {
+          return itm.value
+        })
+      }
+      return cloth
+    }
   },
   methods: {
     ...mapMutations([
@@ -42,7 +56,7 @@ export default {
     },
     goRoute(route) {
       console.log(this.$router)
-      route.params = { sku: this.sku }
+      // route.params.sku=this.sku
       this.$router.push(route)
     },
     addPro() {
@@ -54,27 +68,21 @@ export default {
           cancelButtonText: '继续逛',
           confirmButtonText: '去衣箱',
           confirmButtonClass: 'cred'
-        }).then(({ value, action }) => {
+        }).then((value) => {
+          if (value === 'cancel') {
+            this.$router.back()
+            return
+          }
           this.goRoute({ name: "box" })
         })
         return
       }
-      const cloth = {
-        title: this.product.name,
-        color: this.product.color[this.product.selectesColor].value,
-        size: this.product.size[this.product.selectesSize].value,
-        colors: this.product.color.map(function (itm) {
-          return itm.value
-        }),
-        sizes: this.product.size.map(function (itm) {
-          return itm.value
-        })
-      }
-      this.updateClothes({ type: 'add', cloth: cloth })
+
+      this.updateClothes({ type: 'add', cloth: this.cloth })
     },
     //立即租赁
     zulin() {
-      this.goRoute({ name: "orderLf" })
+      this.goRoute({ name: "orderLf", params: { cloth: this.cloth } })
     },
     //试穿说明
     openSC() {
@@ -116,7 +124,8 @@ export default {
         <mt-header fixed
                    title="嗨克">
           <div slot="left">
-            <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
+            <mt-button class="sprite_login arrow_back"
+                       @click='$router.back()'>
             </mt-button>
           </div>
           <mt-button @click='$router.push("/box")'
@@ -211,8 +220,11 @@ export default {
                      v-if="product.type=='1'">加入我的衣箱</mt-button>
           <mt-button size="normal"
                      class=""
-                     @click="zulin()"
-                     v-if="product.type=='2'">立即租赁</mt-button>
+                     @click="zulin()">立即租赁</mt-button>
+          <!--<mt-button size="normal"
+                             class=""
+                             @click="zulin()"
+                             v-if="product.type=='2'">立即租赁</mt-button>-->
         </div>
   
       </div>
