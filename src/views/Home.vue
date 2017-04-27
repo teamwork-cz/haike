@@ -13,7 +13,7 @@
                  class="sprite box"></mt-button>
     </mt-header>
     <mt-badge type="error"
-              size="small">99+</mt-badge>
+              size="small">{{clothesCount}}</mt-badge>
   
     <section v-show="selnav"
              class="content">
@@ -63,6 +63,11 @@ export default {
   components: {
     swiper,
     hot,
+  },
+  computed:{
+    ...mapGetters([
+      'clothesCount'
+    ])
   },
   methods: {
     ...mapMutations([

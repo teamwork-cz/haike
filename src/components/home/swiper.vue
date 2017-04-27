@@ -2,7 +2,7 @@
 	<div class="swiper-container" id="swiper">
     <div class="swiper-wrapper">
     	<div class="swiper-slide" v-for="item in imgs">
-				<img class="swiperimg" :src="'http://www.hykeyun.com/image?u=' + item.image"/>
+				<img @click="$router.push({ name: 'proInfo', params: { id:`${item.brandId}`}})" class="swiperimg" :src="'http://www.hykeyun.com/image?u=' + item.image"/>
 		  </div>
     </div>
 	<div class="swiper-pagination"></div>
