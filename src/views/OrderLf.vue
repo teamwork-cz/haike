@@ -16,7 +16,7 @@
           <div>收货人：{{address.name}}</div>
           <div>{{address.tel}}</div>
         </div>
-        <div class="gray">收货地址：上海市长宁区长寿街道娄山关路523弄12号703室</div>
+        <div class="gray">收货地址：{{address.region}}{{address.address}}</div>
       </div>
   
       <div class="icon arrowRight"></div>
@@ -24,10 +24,10 @@
     <section class="mt10 bgw p10">
       <div class="">订单号：201703111229450001????哪里来的订单编号</div>
       <div class="hasPro bgw flexBox flex-row flex-main-start pt10">
-        <img src="../assets/images/img.png"></img>
+        <img :src="cloth.imgUrl"></img>
         <div class="flexBox flex-col ">
-          <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-          <div class="gray f12 p10">颜色分类:黄色,尺码:s </div>
+          <div class="pl10">{{cloth.title}}</div>
+          <div class="gray f12 p10">颜色分类:{{cloth.color}},尺码:{{cloth.size}} </div>
         </div>
       </div>
   
@@ -35,8 +35,8 @@
     <section class="mb100">
       <section class="bgw mt10 p10">
         <express></express>
-        <dateTime title="预计送达时间"></dateTime>
-        <dateTime title="预计返还时间"></dateTime>
+        <dateTime v-model="arriveTime" title="预计送达时间:"></dateTime>
+        <dateTime v-model="backTime" title="预计返还时间:"></dateTime>
       </section>
   
       <section class="bgw mt10 p10 ">
@@ -77,6 +77,7 @@ import { dateTime, express } from '../components/'
 export default {
   data() {
     return {
+      arriveTime:''
     }
   },
   components: {
@@ -89,6 +90,10 @@ export default {
     }),
     cloth(){
       return this.$route.params.cloth
+    },
+    test(){
+      console.log(this.arriveTime)
+      return this.arriveTime
     }
   },
   methods: {
