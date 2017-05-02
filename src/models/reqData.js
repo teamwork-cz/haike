@@ -37,12 +37,12 @@ function getReqObj (p) {
 export default {
   req: function (p) {
     const req_obj = getReqObj(p)
-    if (__STAGE__ === 'dev') {
-      req_obj.apiName = p.apiName
-      return test(req_obj)
-    }
-    delete req_obj.apiName
-    return $ajax(req_obj)
+    // if (__STAGE__ === 'dev') {
+    req_obj.apiName = p.apiName
+    return test(req_obj)
+    // }
+    // delete req_obj.apiName
+    // return $ajax(req_obj)
   },
 
   all: function (ps, cb) {

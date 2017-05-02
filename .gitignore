@@ -10,4 +10,5 @@ selenium-debug.log
 .vscode/
 src/test/
 debug.log
+server/
 
