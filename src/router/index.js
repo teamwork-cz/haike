@@ -18,6 +18,7 @@ import {Rent, RentDetail, RentOrder, Login, Reg} from './views'
 import Address from './../views/Address'
 import AddAddress from './../views/AddAdress'
 import orderLists from './../views/orderLists'
+import theme from './../views/theme'
 
 
 const routes = [
@@ -44,6 +45,12 @@ const routes = [
     path: '/hiselect',
     name: 'hiSelect',
     component: proLists
+  },
+  //明星同款之类
+  {
+    path: '/theme/:id',
+    name: 'theme',
+    component: theme
   },
   {
     path: '/orderBox',
@@ -129,7 +136,8 @@ const routes = [
   {
     path: '*',
     component: NotFound
-  }
+  },
+  
 ]
 
 const router = new VueRouter({

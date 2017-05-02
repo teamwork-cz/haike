@@ -220,19 +220,15 @@ export default {
                      v-if="product.type=='1'">加入我的衣箱</mt-button>
           <mt-button size="normal"
                      class=""
-                     @click="zulin()">立即租赁</mt-button>
-          <!--<mt-button size="normal"
-                             class=""
-                             @click="zulin()"
-                             v-if="product.type=='2'">立即租赁</mt-button>-->
+                     @click="zulin()"
+                      v-if="product.type=='0'">立即租赁</mt-button>
+
         </div>
   
       </div>
     </div>
   
-    <!--  <div class="mask"></div> -->
   </div>
-  <!-- ./container -->
 </template>
 
 <style>

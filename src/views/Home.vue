@@ -17,6 +17,7 @@
   
     <section v-show="selnav"
              class="content">
+      
       <swiper :imgs="imgs"></swiper>
       <div class="labelDecribe"></div>
   

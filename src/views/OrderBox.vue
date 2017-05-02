@@ -33,7 +33,7 @@
       </div>
     </section>
   
-    <section class="bgw mt10 p10">
+    <section class="bgw mt10 p10 mb100">
       <express></express>
       <dateTime title="预计送达时间"></dateTime>
     </section>

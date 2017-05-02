@@ -22,7 +22,7 @@
       <mt-tab-container-item id="1">
         <section class="">
           <div class="">衣服状态：{{postStatus}}</div>
-          <div class="boxContain flexBox flex-col mt10">
+          <div class="boxContain flexBox flex-col mt10" id="box">
             <div v-for="(item,index) in boxClothes"
                  class="boxItem flexBox flex-main-start">
               <mt-cell-swipe :right="[
@@ -169,9 +169,7 @@ export default {
 .mint-navbar .mint-tab-item.is-selected {
   border-bottom: 3px solid #FF3F71 !important;
   color: #FF3F71 !important;
-  ;
   margin-bottom: -1px !important;
-  ;
 }
 
 .boxItem {
@@ -196,7 +194,9 @@ export default {
   height: 80px;
   width: 80px
 }
-
+#box .mint-cell-value{
+  width: 100%
+}
 .mint-popup-bottom {
   width: 100%
 }

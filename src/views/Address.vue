@@ -15,7 +15,7 @@
       </mt-button>
     </mt-header>
     <div class="top54 bgw ">
-      <div class="flex flexBox flex-col ">
+      <div class="flex flexBox flex-col " id="adresslsit">
         <template v-for="(address,index) in addaddress">
           <mt-cell-swipe :right="[
                                   {
@@ -93,10 +93,10 @@ export default {
   content: "[默认地址]";
   color: #FF3F71
 }
-.mint-cell-title{
+#adresslsit .mint-cell-title{
   flex: none !important;
 }
-.mint-cell-value{
+#adresslsit .mint-cell-value{
   width: 100%
 }
 .mint-cell-swipe-button{
