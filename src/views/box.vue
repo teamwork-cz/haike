@@ -33,9 +33,9 @@
                                             ]">
                 <div class="hasPro bgw flexBox flex-row flex-main-start">
                   <img :src="item.imgUrl||imgUrl"></img>
-                  <div class="flexBox flex-col ">
+                  <div class="flexBox flex-col wp100">
                     <div class="pl10">{{item.title}}</div>
-                    <div class="gray f12 p10 pt20 flexBox flex-row flex-main-between"
+                    <div class="gray f12 p10 pt20 flexBox flex-row flex-main-between "
                          @click="handleClick(item,index)">
                          <div>颜色分类:{{item.color}},尺码:{{item.size}} </div>
                          <div class="arrow_down_right"></div>
@@ -189,6 +189,7 @@ export default {
 }
 .hasPro {
   height: 100px;
+  width: 100%;
 }
 
 .hasPro img {
@@ -197,6 +198,9 @@ export default {
 }
 
 .mint-popup-bottom {
+  width: 100%
+}
+.mint-cell{
   width: 100%
 }
 </style>
