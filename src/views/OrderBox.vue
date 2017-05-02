@@ -22,7 +22,7 @@
       <div class="icon arrowRight"></div>
     </section>
     <section class="mt10 bgw p10">
-      <div class="">订单号：201703111229450001????哪里来的订单编号</div>
+      <!-- <div class="">订单号：201703111229450001????哪里来的订单编号</div> -->
       <div class="hasPro bgw flexBox flex-row flex-main-start pt10"
            v-for="(item,index) in boxClothes" >
         <img :src="item.imgUrl"></img>

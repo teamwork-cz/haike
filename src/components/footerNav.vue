@@ -9,10 +9,10 @@
 	
 				<div class="nav-icon">
 					<img v-show="route !== '/'"
-					     src="../assets/images/hno.svg"
+					     src="../assets/images/home.svg"
 					     alt="">
 					<img v-show="route === '/'"
-					     src="../assets/images/hok.svg"
+					     src="../assets/images/homeS.svg"
 					     alt="">
 				</div>
 			</nav>
@@ -20,11 +20,11 @@
 			     @click='goRoute("hiSelect")'
 			     :class="{'cur-page': routeName === 'hiSelect'}">
 				<div class="nav-icon">
-					<img v-show="route !== '/order'"
-					     src="../assets/images/mno.svg"
+					<img v-show="route !== '/hiselect'"
+					     src="../assets/images/hi.svg"
 					     alt="">
-					<img v-show="route === '/order'"
-					     src="../assets/images/mok.svg"
+					<img v-show="route === '/hiselect'"
+					     src="../assets/images/hiS.svg"
 					     alt="">
 				</div>
 			</nav>
@@ -32,10 +32,10 @@
 			     :class="{'cur-page': route === '/show'}">
 				<div class="nav-icon">
 					<img v-show="route !== '/show'"
-					     src="../assets/images/eno.svg"
+					     src="../assets/images/show.svg"
 					     alt="">
 					<img v-show="route === '/show'"
-					     src="../assets/images/eok.svg"
+					     src="../assets/images/showS.svg"
 					     alt="">
 				</div>
 			</nav>
@@ -44,10 +44,10 @@
 			     :class="{'cur-page': routeName === 'me'}">
 				<div class="nav-icon">
 					<img v-show="route !== '/me'"
-					     src="../assets/images/mno.svg"
+					     src="../assets/images/me.svg"
 					     alt="">
 					<img v-show="route === '/me'"
-					     src="../assets/images/mok.svg"
+					     src="../assets/images/meS.svg"
 					     alt="">
 				</div>
 			</nav>

@@ -19,7 +19,7 @@
     <!-- tab-container -->
     <mt-tab-container v-model="selected"
                       class="bgw p10">
-      <mt-tab-container-item id="1">
+      <mt-tab-container-item id="1" class="mb100">
         <section class="">
           <div class="">衣服状态：{{postStatus}}</div>
           <div class="boxContain flexBox flex-col mt10" id="box">
@@ -52,7 +52,7 @@
   
         </section>
       </mt-tab-container-item>
-      <mt-tab-container-item id="2">
+      <mt-tab-container-item id="2" class="mb100">
      <!-- rrrr -->
       </mt-tab-container-item>
   
