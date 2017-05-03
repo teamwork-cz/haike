@@ -229,16 +229,16 @@ const testData = {
       data: {
         returnValue: {
           type: '1', // 用这个字段判断衣服类型，不同类型，详情页面不同
-          name: 'Apple/苹果 iPhone 6S',
-          desc: '3D Touch、1200万像素照片、4k视频，强大功能于一身。',
-          price: '5288 - 6888',
+          name: '小礼服',
+          desc: '山本耀司设计',
+          price: 'RMB5288 - 6888',
           id: '1',
           isSelected: true,
           color: [
             {text: '银色', value: '银色'},
-            {text: '深空灰色', value: '深空灰色'},
+            {text: '灰色', value: '灰色'},
             {text: '金色', value: '金色'},
-            {text: '玫瑰金色', value: '玫瑰金色'}
+            {text: '玫瑰色', value: '玫瑰色'}
           ],
           selectesColor: '2',
           slideImages: [
@@ -284,10 +284,10 @@ const testData = {
             }
           ],
           size: [
-            {text: '16GB', value: '16GB'},
-            {text: '64GB', value: '64GB'},
-            {text: '128GB', value: '128GB'},
-            {text: '玫瑰金色', value: '玫瑰金色'}
+            {text: 'S', value: 's'},
+            {text: 'M', value: 'm'},
+            {text: 'L', value: 'l'},
+            {text: 'XL', value: 'xl'}
           ],
           selectesSize: '0',
           cart: []

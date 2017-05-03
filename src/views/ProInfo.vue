@@ -116,8 +116,8 @@ export default {
 }
 </script>
 <template>
-  <div class="container f16"
-       id="proInfo">
+  <div class="container f16 mb100"
+       id="proInfo" >
     <div class="row">
       <section>
         <mt-button slot="right">单品详情</mt-button>
@@ -140,16 +140,16 @@ export default {
       <section class="">
         <swiper :imgs="product.slideImages"></swiper>
       </section>
-      <div class="bgw pl10 pr10">
+      <div class="bgw pl15 pr15">
         <div class="detail">
-          <div class="pt10 pb10">
+          <div class="pt15 pb10">
             <h3 class="name "><span >{{product.name||''}}</span></h3>
             <h4 class="f12 gray">价格：<span class="red f16" >￥</span><span class="red f16" v-text="product.price"></span></h4>
           </div>
   
-          <div class="options flexBox flex-col flex-cross-start border-top">
+          <div class="options flexBox flex-col flex-cross-start border-top pt10 pb5">
             <div class="f14 ">选择尺码：</div>
-            <ul class="flexBox flex-row flex-wrap">
+            <ul class="flexBox flex-row flex-wrap pt10">
               <li v-for="(item,index) in product.color"
                   @click="selectesColor(item,index)"
                   :class="{active: index  == product.selectesColor}">
@@ -179,9 +179,9 @@ export default {
                slot="icon">
         </mt-button>
       </section>
-      <section class="bgw mt10 p10">
+      <section class="bgw mt10 p10 pt15" id="probadge">
         <div class="tc centerText">礼服信息</div>
-        <div class="badgeList mt10">
+        <div class="badgeList pt20">
           <mt-badge size="small"
                     color="#ccc">礼服</mt-badge>
           <mt-badge size="small"
@@ -263,6 +263,7 @@ export default {
   padding: 7px 10px;
   margin: 10px 0px;
   background-color: #F0F2F5;
+  border-radius: 5px
 }
 
 ul .active {
@@ -284,5 +285,14 @@ ul .active {
 
 .mint-msgbox-message {
   line-height: 21px !important;
+}
+#probadge .is-size-small {
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 2px 10px;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 </style>
