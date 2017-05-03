@@ -10,46 +10,46 @@ const testData = {
         count: '4',
         returnCode: '0',
         returnValue: [
-          {
-            imageWidth: 10,
-            brandId: '0',
-            id: 't1',
-            image: '11111111111111111111111111111122',
-            imageHight: 10,
-            title: '\u8f6e\u64ad\u56fe1',
-            state: '0',
-            pdsId: 'pds1'
-          },
-          {
-            imageWidth: 10,
-            brandId: '0',
-            id: 't2',
-            image: '11111111111111111111111111111122',
-            imageHight: 10,
-            title: '\u8f6e\u64ad\u56fe2',
-            state: '0',
-            pdsId: 'pds1'
-          },
-          {
-            imageWidth: 10,
-            brandId: '0',
-            id: 't3',
-            image: '11111111111111111111111111111122',
-            imageHight: 10,
-            title: '\u8f6e\u64ad\u56fe3',
-            state: '0',
-            pdsId: 'pds1'
-          },
-          {
-            imageWidth: 0,
-            brandId: '0',
-            id: 't4',
-            image: '11111111111111111111111111111122',
-            imageHight: 0,
-            title: '\u8f6e\u64ad\u56fe4',
-            state: '0',
-            pdsId: 'pds1'
-          }
+           {
+          "id": "t1",
+          "title": "轮播图1",
+          "image": "11111111111111111111111111111122",
+          "state": "0",
+          "imageWidth": 10,
+          "imageHight": 10,
+          "pdsId": "pds1",
+          "brandId": "0"
+        },
+        {
+          "id": "t2",
+          "title": "轮播图2",
+          "image": "11111111111111111111111111111122",
+          "state": "0",
+          "imageWidth": 10,
+          "imageHight": 10,
+          "pdsId": "pds1",
+          "brandId": "0"
+        },
+        {
+          "id": "t3",
+          "title": "轮播图3",
+          "image": "11111111111111111111111111111122",
+          "state": "0",
+          "imageWidth": 10,
+          "imageHight": 10,
+          "pdsId": "pds1",
+          "brandId": "0"
+        },
+        {
+          "id": "t4",
+          "title": "轮播图4",
+          "image": "11111111111111111111111111111122",
+          "state": "0",
+          "imageWidth": 0,
+          "imageHight": 0,
+          "pdsId": "pds1",
+          "brandId": "0"
+        }
         ]
       }
     },
@@ -80,7 +80,29 @@ const testData = {
                   state: '1',
                   title: '\u7279\u60e0\u5546\u54c11',
                   imageWidth: '50'
-                }
+                },
+                  {
+                  image: '11111111111111111111111111111122',
+                  imageHight: '50',
+                  brandId: '0',
+                  id: 'a1',
+                  pdsId: 'pds1',
+                  appMainBodyId: 'a',
+                  state: '1',
+                  title: '\u7279\u60e0\u5546\u54c11',
+                  imageWidth: '50'
+                },
+                  {
+                  image: '11111111111111111111111111111122',
+                  imageHight: '50',
+                  brandId: '0',
+                  id: 'a1',
+                  pdsId: 'pds1',
+                  appMainBodyId: 'a',
+                  state: '1',
+                  title: '\u7279\u60e0\u5546\u54c11',
+                  imageWidth: '50'
+                },  
               ],
               totalPages: 1,
               last: true,

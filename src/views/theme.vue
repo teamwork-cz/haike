@@ -16,8 +16,8 @@
   </div>
  <div class="bgw">
     <ul class="bordergray p15">
-      <li class="f16" style="line-height:19px">Q：嗨克提供什么服务？</li>
-      <li class="f14 gray" style="line-height: 21px;padding-top: 7px">A：嗨克包括两个核心服务，时装全球精选，可购买，以
+      <li class="f16" style="line-height:19px">Q：嗨客提供什么服务？</li>
+      <li class="f14 gray" style="line-height: 21px;padding-top: 7px">A：嗨客包括两个核心服务，时装全球精选，可购买，以
      及大牌服装次租。</li>
     </ul>
      <ul class="bordergray p15">
@@ -27,14 +27,14 @@
     </ul>
     <ul class="bordergray p15">
       <li class="f16" style="line-height:19px">Q：时装是如何清洗的？</li>
-      <li class="f14 gray" style="line-height: 21px;padding-top: 7px">A：嗨克和最专业的中央清洗工厂合作，采用第五代专业
+      <li class="f14 gray" style="line-height: 21px;padding-top: 7px">A：嗨客和最专业的中央清洗工厂合作，采用第五代专业
      设备，经过12道工序，能够做到细菌和衣物的彻底分
      离。</li>
-     <li>了解详细的清洗步骤请：前往“嗨克清洗报告”</li>
+     <li>了解详细的清洗步骤请：前往“嗨客清洗报告”</li>
     </ul>
     <ul class="bordergray p15">
       <li class="f16" style="line-height:19px">Q：时装是如何配送的？</li>
-      <li class="f14 gray" style="line-height: 21px;padding-top: 7px">A：配送全部由嗨克承担，在APP内下单确定配送时间和
+      <li class="f14 gray" style="line-height: 21px;padding-top: 7px">A：配送全部由嗨客承担，在APP内下单确定配送时间和
      地点，坐等衣箱上门即可。下新衣箱时可以直接预约
      旧衣箱归还时间和地点，快递员直接上门取件。</li>
     </ul>

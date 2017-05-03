@@ -17,17 +17,33 @@
                v-lazy.container="'http://www.hykeyun.com/image?u=' + item.image" />
           <!-- <img v-lazyload="'http://www.hykeyun.com/image?u=' + item.image" />		 -->
         </figure>
-        <div class="flexBox flex-row flex-main-arount pt10 pb10">
+        <div class="flexBox flex-row flex-main-start pt10 pb10" style="height:165px"> 
           <div v-for="itemds in item.appMainBodyDs.content"
                @click="goRoute({ name: 'proInfo', params: { id:`${itemds.id}`}})"
-               class="itemds ml10 flex3">
-            <div>
-              <img class=""
-                   v-lazy.container="'http://www.hykeyun.com/image?u=' + itemds.image" />
-              <div>{{itemds.title}}</div>
-            </div>
+               class="itemds ml10 flex3" >       
+              <img v-lazy.container="'http://www.hykeyun.com/image?u=' + itemds.image" />                
+              <div>{{itemds.title}}</div>          
           </div>
+        </div>
+      </li>
+    </ul>
+
+
+       <ul class="mt10 bgw">
+        <li  style="overflow-x:scroll">
+        <div @click="goRoute({ name: 'hiSelect'})">
+          <mt-cell title="嗨克推荐品牌"
+                   label="OUR FAVOURITE" >
+             <div>全部</div>        
+          </mt-cell>
+        </div>
+        <div class="flexBox flex-row flex-main-start pt10 pb10"> 
+          <div v-for="itemds in hotLists[0].appMainBodyDs.content"
+               @click="goRoute({ name: 'proInfo', params: { id:`${itemds.id}`}})"
+               class="itemds ml10"  style="width:210px;height:120px;">       
+              <img v-lazy.container="'http://www.hykeyun.com/image?u=' + itemds.image" />                        
           </div>
+        </div>
       </li>
     </ul>
   </section>
@@ -452,7 +468,10 @@ export default {
   color: #666;
   text-align: center;
 }
-
+.itemds{
+    height: 140px;
+    width: 100px;
+}
 .itemds:first-child {
   margin-left: 0px;
 }

@@ -978,12 +978,16 @@ padding: 0px 10px
     background-size:  25px auto;
 }
 .mint-badge.is-error {
-    z-index: 9;
+       z-index: 9;
     position: fixed;
     top: 0px;
-    right: 45px;
+    right: 55px;
     padding: 2px;
-    background-color: #FA4A3A
+    background-color: #FA4A3A;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+
 }
 .single{
     right: 5px !important;

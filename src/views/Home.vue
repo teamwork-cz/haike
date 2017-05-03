@@ -1,7 +1,7 @@
 <template>
   <section>
     <mt-header fixed
-               title="嗨克">
+               title="嗨客">
       <div slot="left">
         <mt-button class="sprite kefu"></mt-button>
       </div>
@@ -32,14 +32,8 @@
         <div class="item ">
           <div class="group group_sale mc"></div>折扣专区</div>
       </div>
-      <!--  
-        <div class="">
-          <router-link :to="{ name: 'detail', params: { id: '0'}}">
-            <div class=""></div>
-          </router-link>
-        </div>-->
-  
       <hot :hotLists="hotLists"></hot>
+      
     </section>
     <!-- <play-video></play-video> -->
   </section>
@@ -158,7 +152,7 @@ export default {
     this.pushLoadStack()
     this.$reqData.req({
       apiName: 'topSlides',
-      url: '/appMainTop/l',
+      url: '/appMainTop',
       method: 'get'
     }).then((res) => {
       this.clickLoadStatus = false
