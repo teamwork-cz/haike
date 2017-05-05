@@ -21,7 +21,7 @@
                  <img slot="right" class="w20" src="../../assets/images/eye_c.png">
                  <!-- <img slot="right" class="" src="../../assets/images/eye_o.png"> -->
         </x-input>
-        <div class="f12 gray p15">我已阅读并接受 <span class="cred">嗨客用户注册协议 </span></div>
+        <div class="f12 gray p15">我已阅读并接受 <span class="cred">嗨克用户注册协议 </span></div>
         <div class="p15 top44">
               <x-button class="buttonRed " @click.native="onClick"
                    >注册</x-button>

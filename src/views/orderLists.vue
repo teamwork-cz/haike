@@ -162,13 +162,7 @@ proItem
     color: #FF3F71 !important;
     margin-bottom: -1px !important;;
 }
-.boxItem{
-  
-    height: 90px;
-    background: #fff url('../assets/images/addboxbg.png') center no-repeat;
-    background-size: 100%;
-    margin: 10px 5px;
-}
+
 .hasPro{
   height: 100px;
 

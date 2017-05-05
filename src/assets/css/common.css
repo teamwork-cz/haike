@@ -987,7 +987,6 @@ padding: 0px 10px
     height: 15px;
     width: 15px;
     border-radius: 15px;
-
 }
 .single{
     right: 5px !important;
@@ -1139,4 +1138,52 @@ font-size: 16px
 }
 .mint-cell-value.is-link {
     margin-right: 30px;
+}
+.label {
+  width: 110px;
+  height: 50px;
+}
+.boxItem{
+  
+    height: 90px;
+    background: #fff url('../images/addboxbg.png') center no-repeat;
+    background-size: 100%;
+    margin: 10px 5px;
+}
+.arrow_down_right{
+   width: 12px;
+   height: 6px;
+    background: #fff url('../images/arrow_down.png') center no-repeat;
+    background-size: 100%;
+}
+
+.box{
+  
+    height: 90px;
+    background: #fff url('../images/addboxbg.png') center no-repeat;
+    background-size: 100%;
+    margin: 10px 5px;
+}
+.by-label {
+  background: #fff url('../images/by-label.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+
+.lf-label {
+
+  background: #fff url('../images/lf-label.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+
+.km-label {
+
+  background: #fff url('../images/km-label.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+
+.labelDecribe {
+  height: 40px;
+  width: 100%;
+  background: #fff url('../images/describe.png') center no-repeat;
+  background-size: 100%;
 }

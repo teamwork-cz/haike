@@ -1,7 +1,7 @@
 <template>
   <section>
     <mt-header fixed
-               title="嗨客">
+               title="嗨克">
       <div slot="left">
         <mt-button class="sprite kefu"></mt-button>
       </div>
@@ -291,10 +291,5 @@ export default {
   vertical-align: middle;
 }
 
-.labelDecribe {
-  height: 40px;
-  width: 100%;
-  background: #fff url('../assets/images/describe.png') center no-repeat;
-  background-size: 100%;
-}
+
 </style>

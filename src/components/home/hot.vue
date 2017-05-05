@@ -5,7 +5,7 @@
           v-for="item in hotLists">
         <div @click="goRoute({ name: 'hiSelect'})">
           <mt-cell v-bind:title="item.title"
-                   v-bind:label="item.title"                  
+                   v-bind:label="item.etitle"                  
                    is-link class="bgw p10">
              <div>全部</div>        
           </mt-cell>

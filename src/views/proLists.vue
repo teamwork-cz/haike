@@ -204,27 +204,6 @@ image[lazy=loading] {
   background-color: #fff
 }
 
-.label {
-  width: 110px;
-  height: 50px;
-}
-
-.by-label {
-  background: #fff url('../assets/images/by-label.jpg') center no-repeat;
-  background-size: 100% 100%;
-}
-
-.lf-label {
-
-  background: #fff url('../assets/images/lf-label.jpg') center no-repeat;
-  background-size: 100% 100%;
-}
-
-.km-label {
-
-  background: #fff url('../assets/images/km-label.jpg') center no-repeat;
-  background-size: 100% 100%;
-}
 
 
 .mint-search {
