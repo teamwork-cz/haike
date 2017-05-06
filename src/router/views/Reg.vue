@@ -8,7 +8,7 @@
         </mt-button>
       </div>
     </mt-header>
-    <div class="bgw p15 top44">
+    <div class="bgw p15 top44" style="padding-top: 50px">
         <x-input 
                  name="username"
                  placeholder="请输入姓名"
@@ -41,6 +41,10 @@
      
     </div>
 
+ <!--    <mt-popup v-model="popupVisible" position="bottom" class="mint-popup-2" :modal="false">
+      <p>更新成功</p>
+    </mt-popup> -->
+
 </div>
     
 </template>
@@ -61,7 +65,9 @@ export default {
             password: '',
             close:true,
             valcode:'',
-            time: 0
+            time: 0,
+            popupVisible:false,
+
         }
     },
     created() {
@@ -74,6 +80,7 @@ export default {
     },
     methods: {
         onClick() {
+            // this.popupVisible==true;
             console.log(this.name)
             console.log(this.password)
             this.$router.replace({ name: this.nextPath })
@@ -99,16 +106,38 @@ export default {
                 }
             }
     },
-        computed: {
+    computed: {
             text() {
                 return this.time > 0 ? this.time + 's' : '获取验证码'
             }
+        },
+     watch: {
+      popupVisible(val) {
+        if (val) {
+          setTimeout(() => {
+            this.popupVisible= false;
+          }, 2000);
         }
+      }
+    },
 
 }
 </script>
 <style type="text/css">
-
+ .mint-popup-2 {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        background-color: rgba(0,0,0,.7);
+        backface-visibility: hidden;
+      }
+  .mint-popup-2 p {
+        line-height: 50px;
+        color: #fff;
+      }
+  .mint-popup-top {
+        top: 90px !important;
+      }
 </style>
 
 

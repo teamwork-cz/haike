@@ -6,7 +6,7 @@
             </mt-button>
         </div>
     </mt-header>
-    <div class="top44 bgw p15">
+    <div class="top44 bgw p15" style="padding-top: 50px">
         <x-input name="phoneNo"
                  placeholder="请输入手机号码"
                  v-model="phoneNo"
@@ -14,18 +14,22 @@
                  type='tel'
                  required
                  is-type="china-mobile"></x-input>
-        <x-input name="password"
-                 required
+        <x-input 
+                 name="password"
                  placeholder="请输入密码"
                  v-model="password"
-                 type='password'></x-input>
+                 :type='pwdtype'
+                 > 
+                 <img slot="right" class="w20" src="../../assets/images/eye_c.png" v-show="close" @click="pwchange()">
+                 <img slot="right" class="w20" src="../../assets/images/eye_o.png" v-show="!close" @click="pwchange()">
+        </x-input>
         <div class="p15 top40">
               <x-button class="buttonRed " @click.native="onClick"
                    >登录</x-button>
         </div>
-         <div class="flexBox flex-row flex-main-arount cred f12 top50">
+         <div class="flexBox flex-row flex-main-arount cred f12 top30">
             <div>忘记密码</div>
-            <div>注册用户</div>
+            <div @click="goRoute({name:'reg'})">注册用户</div>
         </div>
     </div>
 </section>
@@ -37,7 +41,9 @@ export default {
     data() {
         return {
             phoneNo: '',
-            password: ''
+            password: '',
+            pwdtype:'password',
+            close:true,
         }
     },
     created() {
@@ -91,7 +97,21 @@ export default {
             // console.log(this.name)
             // console.log(this.password)
 
-        }
+        },
+        goRoute(route) {
+              console.log(this.$router)
+              // route.params.sku=this.sku
+              this.$router.push(route)
+            },
+         pwchange(){
+           this.close=!this.close;
+           if(this.close){
+            this.pwdtype="password";
+           }else{
+             this.pwdtype="text";
+           }
+
+        },
     }
 }
 </script>
