@@ -141,6 +141,7 @@ export default {
 
 .nav-show::after {
 	content: "嗨show";
+	width: 50px
 }
 
 .nav-me::after {
