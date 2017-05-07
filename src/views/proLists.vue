@@ -31,7 +31,7 @@
   
     <section class="bgw ">
       <div class="flexBox heth40 flex-row flex-main-arount">
-        <div @click='showChanghe=!showChanghe'>
+        <div @click='showChanghe=!showChanghe' @blur='changheBlur'>
           <span class="vm city-name f14 ">场合</span>
           <span class="city-arrow-icon vm"></span>
         </div>
@@ -45,12 +45,12 @@
         </div>
       </div>
     </section>
-    <div v-show="showChanghe"
+    <div v-show="showChanghe" 
          class="changhe flexBox flex-row flex-main-arount flex-no-wrap">
-      <div class="flex1 active">酒会/年会</div>
-      <div class="flex1">派对</div>
-      <div class="flex1">婚礼</div>
-      <div class="flex1">晚宴</div>
+      <div class="flex1" @click='chClick("ch1")' :class='{active:changhe==="ch1"}'>酒会/年会</div>
+      <div class="flex1"  @click='chClick("ch2")'  :class='{active:changhe==="ch2"}'>派对</div>
+      <div class="flex1"  @click='chClick("ch3")'  :class='{active:changhe==="ch3"}'>婚礼</div>
+      <div class="flex1"  @click='chClick("ch4")'  :class='{active:changhe==="ch4"}'>晚宴</div>
     </div>
   
     <section class="itemofPro mt5">
@@ -81,7 +81,8 @@ export default {
       sellCountUp: false,
       searchValue: '',
       byLists: [],
-      lfLists: []
+      lfLists: [],
+      changhe:'ch1'
     }
   },
   components: {
@@ -105,6 +106,14 @@ export default {
       'showCityList',
       'pushComingList'
     ]),
+    chClick(ch){
+      this.changhe=ch
+      this.showChanghe=false
+      this.getHiSelect()
+    },
+    changheBlur(){
+      this.showChanghe=false      
+    },
     loadMore() {
       console.log('loadingmore')
       this.loading = true;
