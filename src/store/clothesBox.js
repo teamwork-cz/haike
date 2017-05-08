@@ -9,12 +9,14 @@ const actions = {
     const data = {
       count: 2,
       clothes: [
-        {
+        { 
+          imgUrl:'11111111111111111111111111111122',
           title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
           color: '黄色',
           size: 'S'
         },
         {
+          imgUrl:'11111111111111111111111111111122',
           title: '李维斯(Levi’s)女士休闲群装 #Medium Stonewash',
           color: '黄色',
           size: 'S'

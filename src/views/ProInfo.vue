@@ -25,6 +25,7 @@ export default {
     ...mapGetters(['clothesCount']),
     cloth() {
       const cloth = {
+        imgUrl:this.product.imags[0].image,
         title: this.product.activeTitle,
         color: this.product.colorList[this.selectesColor].pname,
         size: this.product.sizeList[this.selectesSize].pname,

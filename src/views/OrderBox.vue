@@ -8,24 +8,29 @@
         </mt-button>
       </div>
     </mt-header>
-    <section class="adressOrder top44 flexBox flex-row flex-cross-center h100 p10">
+ <!--    有默认地址 -->
+    <section class="adressOrder top44 flexBox flex-row flex-cross-center h100 pr10 pl10" v-if="address" >
       <div class="addressIcon"></div>
-      <div class="flexBox flex-col pl10 "
+      <div class="flexBox flex-col pl10 pr10"
            @click="goRoute({name:'address'})">
         <div class="flexBox flex-row flex-main-between">
-          <div>收货人：{{address.name}}</div>
-          <div>{{address.tel}}</div>
+          <div>收货人：{{address.name||''}}</div>
+          <div>{{address.tel||''}}</div>
         </div>
-        <div class="gray">收货地址：{{address.region}}{{address.address}}</div>
-      </div>
-  
+        <div class="gray">收货地址：{{address.region}}{{address.address||''}}</div>
+      </div> 
       <div class="icon arrowRight"></div>
     </section>
+   <!--  没有默认地址 -->
+   <div v-show="!address" class="adressOrder top44  h50 pl10 f16">
+        <mt-cell title="添加收货地址" is-link></mt-cell>
+    </div>
+
     <section class="mt10 bgw p10">
       <!-- <div class="">订单号：201703111229450001????哪里来的订单编号</div> -->
       <div class="hasPro bgw flexBox flex-row flex-main-start pt10"
            v-for="(item,index) in boxClothes" >
-        <img :src="item.imgUrl"></img>
+        <img :src="'http://www.hykeyun.com/image?u=' + item.imgUrl"></img>
         <div class="flexBox flex-col ">
           <div class="pl10">{{item.title}}</div>
           <div class="gray f12 p10">颜色分类:{{item.color}},尺码:{{item.size}} </div>

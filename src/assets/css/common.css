@@ -277,6 +277,9 @@ a.gray {
 .h100 {
     height: 100px;
 }
+.h44{
+    height: 44px
+}
 .h50 {
     height: 50px;
     line-height: 50px
@@ -1194,4 +1197,8 @@ font-size: 16px
   width: 100%;
   background: #fff url('../images/describe.png') center no-repeat;
   background-size: 100%;
+}
+.hasPro img{
+    width: 80px;
+    height: 80px
 }

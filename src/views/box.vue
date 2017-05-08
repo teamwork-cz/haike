@@ -32,7 +32,7 @@
                                               }
                                             ]">
                 <div class="hasPro bgw flexBox flex-row flex-main-start">
-                  <img :src="item.imgUrl||imgUrl"></img>
+                   <img :src="'http://www.hykeyun.com/image?u=' + item.imgUrl"></img>
                   <div class="flexBox flex-col wp100">
                     <div class="pl10">{{item.title}}</div>
                     <div class="gray f12 p10 pt20 flexBox flex-row flex-main-between "

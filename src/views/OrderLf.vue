@@ -8,7 +8,7 @@
         </mt-button>
       </div>
     </mt-header>
-    <section class="adressOrder top44 flexBox flex-row flex-cross-center h100 p10">
+    <section class="adressOrder top44 flexBox flex-row flex-cross-center h100 p10" >
       <div class="addressIcon"></div>
       <div class="flexBox flex-col pl10 "
            @click="goRoute({name:'address'})">
@@ -24,7 +24,7 @@
     <section class="mt10 bgw p10">
       <!-- <div class="">订单号：201703111229450001????哪里来的订单编号</div> -->
       <div class="hasPro bgw flexBox flex-row flex-main-start pt10">
-        <img :src="cloth.imgUrl"></img>
+      <img :src="'http://www.hykeyun.com/image?u=' + cloth.imgUrl"></img>
         <div class="flexBox flex-col ">
           <div class="pl10">{{cloth.title}}</div>
           <div class="gray f12 p10">颜色分类:{{cloth.color}},尺码:{{cloth.size}} </div>

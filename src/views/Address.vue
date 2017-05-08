@@ -16,7 +16,7 @@
     </mt-header>
     <div class="top54 bgw ">
       <div class="flex flexBox flex-col " id="adresslsit">
-        <template v-for="(address,index) in addaddress">
+        <template v-for="(address,index) in addaddress" >
           <mt-cell-swipe :right="[
                                   {
                                     content: '设为默认',
@@ -29,7 +29,7 @@
                                     handler: () =>{onDelete(index)}
                                   }
                                 ]"
-                         class=" p15 bordergray">
+                         class=" p15 bordergray"  @click="chooseAddress()">
             <div class="wp100">
               <div class="bgw flexBox flex-row  flex-main-between ">
                 <div class="cblack">{{address.name}}</div>
@@ -70,6 +70,15 @@ export default {
     },
     setDefault(index) {
       this.updateaddresses({ type: 'default', index: index })
+
+    },
+    goRoute(route) {
+      console.log(this.$router)
+      this.$router.push(route)
+    },
+    chooseAddress(index){
+      alert('选择地址'+index+'返回订单页面');
+      this.goRoute({name:'orderBox'});
 
     }
   }

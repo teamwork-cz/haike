@@ -1,72 +1,52 @@
 <template>
   <section>
     <mt-header 
-               title="使用中的衣箱">
+               title="选择卡类型">
         <div slot="left">
            <mt-button  class="sprite_login arrow_back" @click='$router.back()'>
             </mt-button>
          </div>
     </mt-header>
-
-
-<mt-navbar class="page-part p10 "  v-model="selected">
-  <mt-tab-item class="f16" id="1">使用中的衣箱</mt-tab-item>
-  <mt-tab-item class="f16" id="2">礼服订单</mt-tab-item>
-</mt-navbar>
-
-<!-- tab-container -->
-<mt-tab-container v-model="selected" class="bgw p10">
-  <mt-tab-container-item id="1">
-     <section class="">
-      <div class="">衣服状态：未寄出</div>
-      <div class="boxContain flexBox flex-col">
-         <div class="box ">
-           <div class="hasPro bgw flexBox flex-row flex-main-start">
-               <img src="../assets/images/img.png"></img>
-               <div class="flexBox flex-col ">
-                   <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-                   <div class="gray f12 p10" @click="handleClick()">颜色分类:黄色,尺码:s </div>
-               </div>
-           </div>
-           
-           
-         </div>
-         <div class="box flexBox flex-main-center" >
-             <div class="hasPro bgw flexBox flex-row flex-main-start">
-               <img src="../assets/images/img.png"></img>
-               <div class="flexBox flex-col ">
-                   <div class="pl10">李维斯(Levi’s)女士休闲群装 #Medium Stonewash</div>
-                   <div class="gray f12 p10" >颜色分类:黄色,尺码:s </div>
-               </div>
-           </div>
-         </div>
-          <div class="box flexBox flex-main-center" @click="goRoute({ name: 'hiSelect'})">
-           
-         </div>
-      </div>
-</section>
-  </mt-tab-container-item>
-  <mt-tab-container-item id="2">
-   礼服
-  </mt-tab-container-item>
+   <section class=" bgw p10 cardList">
+       <div class="wth100 flexBox flex-row flex-main-arount gray">
+        <div class="item tc flex3 pt10 cardactive ">
+           <div class="f14">月卡</div>
+           <div class="f20">￥2543</div>
+           <div class="f14">会员期+365天</div>
+        </div>
+         <div class="item tc flex3 pt10 ">
+           <div class="f14">月卡</div>
+           <div class="f20">￥2543</div>
+           <div class="f14">会员期+365天</div>
+        </div>
+         <div class="item tc flex3 pt10 ">
+           <div class="f14">月卡</div>
+           <div class="f20">￥2543</div>
+           <div class="f14">会员期+365天</div>
+        </div>
+       </div>
+    </section> 
+ <section class="mt10">
+   <div class=" pt20 tc">有效期剩余365天</div>
+   <div class="p10 bgw">
+       <mt-cell  title="原价(499/月x6月)" value="顺丰"></mt-cell>
+       <mt-cell title="长期折扣卡"  is-link>
+          <span class="cred">-300</span>
+       </mt-cell>
+        <mt-cell title="配送费用" value="免费"></mt-cell>
+       <mt-cell title="清洗费" value="2017/03/16"></mt-cell>
+        <mt-cell title="优惠券"  is-link>
+          <span class="cred">-300</span>
+        </mt-cell>
+       <mt-cell class="cblack f18" title="总价" value="￥400323"></mt-cell>
+   </div>
  
-</mt-tab-container>
-
-<mt-popup
-  v-model="popupVisible"
-  position="bottom"
-  popup-transition="popup-fade" > 
-  <mt-picker :slots="slots" @change="onValuesChange" ></mt-picker>
-
-</mt-popup>
-
-  
-<div class="f12 gray pt20 tc">查看历史记录>></div>
-
-
-      <div class="fixedBottom wp100  bgw">   
-         <div class="flexBox flex-row flex-main-center" @click="goRoute({ name: 'orderBox'})"> 
-            <mt-button size="normal">寄这个衣箱给我（1/3）</mt-button>
+ </section>
+      <div class="fixedBottom wp100  bgw">  
+          <div class="f12 pt20 tc"> 手中无衣箱，会员有效期计时自动暂停</div>
+     
+         <div class="flexBox flex-row flex-main-center" @click="payNext()"> 
+            <mt-button size="normal">去支付</mt-button>
          </div>                      
       </div>
   
@@ -74,6 +54,7 @@
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import { MessageBox }  from 'mint-ui'
 export default {
   data() {
     return {
@@ -99,7 +80,7 @@ export default {
     }
   },
   components: {
-
+    MessageBox
   },
   methods: {
     ...mapMutations([
@@ -114,6 +95,13 @@ export default {
         },
     onValuesChange(picker, values){
       console.log(values[0]+','+values[1])
+        },
+     payNext(){
+      MessageBox({
+        title: '提示',
+        message: '确定执行此操作?',
+        showCancelButton: true
+      });
         },
     requestData(url, fn) {
       this.pushLoadStack()
@@ -137,13 +125,7 @@ export default {
     color: #FF3F71 !important;;
     margin-bottom: -1px !important;;
 }
-.box{
-  
-    height: 90px;
-    background: #fff url('../assets/images/addboxbg.png') center no-repeat;
-    background-size: 100%;
-    margin: 10px 5px;
-}
+
 .hasPro{
   height: 100px;
 
@@ -155,4 +137,13 @@ export default {
   .mint-popup-bottom{
     width: 100%
   }
+  .cardList .item{
+     color: #999;
+     border:1px solid #999;
+  }
+  .cardactive{
+     border:1px solid #FF7979 !important;
+     color: #FF7979 !important;
+  }
+ 
 </style>
