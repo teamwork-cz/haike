@@ -6,22 +6,22 @@
                  cancel-text="取消"
                  placeholder="搜索嗨选商品">
       </mt-search>
-      <mt-button class="sort sort1"
-                 slot="right"></mt-button>
+      <mt-button id="sortChange" class="sort sort1"
+                 slot="right" @click="chagesort()"></mt-button>
     </div>
     <section class="padtop10">
       <div class="wth100 flexBox flex-row flex-main-arount">
-        <div class="item "
+        <div class="item flex28"
              :class="{'border-1px-colred':labelType===1}"
              @click="changeType(1)">
           <div class="label by-label"></div>
         </div>
-        <div class="item "
+        <div class="item flex28"
              :class="{'border-1px-colred':labelType===2}"
              @click="changeType(2)">
           <div class="label lf-label"></div>
         </div>
-        <div class="item "
+        <div class="item flex28"
              :class="{'border-1px-colred':labelType===3}"
              @click="changeType(3)">
           <div class="label km-label"></div>
@@ -113,6 +113,24 @@ export default {
     },
     changheBlur(){
       this.showChanghe=false      
+    },
+    addClass( elements,cName ){ 
+      if( !hasClass( elements,cName ) ){ 
+      elements.className += " " + cName; 
+      }; 
+    },
+    removeClass( elements,cName ){ 
+    if( hasClass( elements,cName ) ){ 
+    elements.className = elements.className.replace( new RegExp( "(\\s|^)" + cName + "(\\s|$)" )," " ); // replace方法是替换 
+    }; 
+   },
+
+    hasClass( elements,cName ){ 
+      return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") ); // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断 
+     },
+    chagesort(){
+      var sortClass=document.getElementById('sortChange');
+       if(hasClass('sortClass','')){}
     },
     loadMore() {
       console.log('loadingmore')

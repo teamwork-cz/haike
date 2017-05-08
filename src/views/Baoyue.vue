@@ -4,10 +4,10 @@
          infinite-scroll-disabled="loading"
          infinite-scroll-distance="10">
     
-        <div class="flex1"
+        <div class="flex45"
              v-for="item in byLists">
             <router-link :to="{ name: 'proInfo', params: { id:`${item.id}`}}">
-                <img class="width185"
+                <img class=""
                      v-lazy.container="'http://www.hykeyun.com/image?u=' + item.image">
                 <div class="title">{{item.title}}</div>
             </router-link>
