@@ -258,81 +258,165 @@ const testData = {
     msg: 'ok',
     total: 1
   },
-  detail: {  
-    data: {
-      api: 'hyke.shop',
-      data: {
-        returnValue: {
-          type: '1', // 用这个字段判断衣服类型，不同类型，详情页面不同
-          name: '小礼服',
-          desc: '山本耀司设计',
-          price: 'RMB5288 - 6888',
-          id: '1',
-          isSelected: true,
-          color: [
-            {text: '银色', value: '银色'},
-            {text: '灰色', value: '灰色'},
-            {text: '金色', value: '金色'},
-            {text: '玫瑰色', value: '玫瑰色'}
-          ],
-          selectesColor: '2',
-          slideImages: [
-            {
-              imageWidth: 10,
-              brandId: '0',
-              id: 't1',
-              image: '11111111111111111111111111111122',
-              imageHight: 10,
-              title: '\u8f6e\u64ad\u56fe1',
-              state: '0',
-              pdsId: 'pds1'
-            },
-            {
-              imageWidth: 10,
-              brandId: '0',
-              id: 't2',
-              image: '11111111111111111111111111111122',
-              imageHight: 10,
-              title: '\u8f6e\u64ad\u56fe2',
-              state: '0',
-              pdsId: 'pds1'
-            },
-            {
-              imageWidth: 10,
-              brandId: '0',
-              id: 't3',
-              image: '11111111111111111111111111111122',
-              imageHight: 10,
-              title: '\u8f6e\u64ad\u56fe3',
-              state: '0',
-              pdsId: 'pds1'
-            },
-            {
-              imageWidth: 0,
-              brandId: '0',
-              id: 't4',
-              image: '11111111111111111111111111111122',
-              imageHight: 0,
-              title: '\u8f6e\u64ad\u56fe4',
-              state: '0',
-              pdsId: 'pds1'
+  detail: {     
+    "data": {
+        "api": "hyke.shop",
+        "data": {
+            "count": "1",
+            "returnCode": "0",
+            "returnValue": {
+                "activeTitle": "测试内容37am",
+                "brandCount": "200",
+                "brandId": "1",
+                "brandMarkCount": "250",
+                "brandName": "adidas(阿迪达斯)",               
+                "colorList": [
+                    {
+                        "pid": "1",
+                        "pname": "红"
+                    },
+                    {
+                        "pid": "2",
+                        "pname": "黄"
+                    },
+                    {
+                        "pid": "3",
+                        "pname": "蓝"
+                    }
+                ],
+                "colorPid": "1",
+                "colorPname": "黑色",
+                "description": "测试内容5hnx",
+                "imags": [
+                    {
+                        "image": "11111111111111111111111111111125"
+                    },
+                    {
+                        "image": "11111111111111111111111111111122"
+                    },
+                    {
+                        "image": "11111111111111111111111111111123"
+                    }
+                ],
+                "keys": [
+                    "关键词1",
+                    "关键词2",
+                    "关键词3"
+                ],
+                "materialPid": "1",
+                "materialPname": "涤纶",
+                "originalPrice": "6000",
+                "purchaseDescription": {
+                    "colorlist": "黑色/白色",
+                    "cycle": "一周内送达",
+                    "materiallist": "涤纶/纤维",
+                    "sizelist": "xl/l/s/m",
+                    "xilielist": "吊带裙"
+                },
+                "purchaseSellService": {},
+                "purchaseSource": {},
+                "rentPrice": "4000",
+                "sellPrice": "5000",
+                "sizeList": [
+                    {
+                        "pid": "1",
+                        "pname": "大号"
+                    },
+                    {
+                        "pid": "2",
+                        "pname": "XL"
+                    }
+                ],
+                "title": "测试内容y692",
+                "type": "1"
             }
-          ],
-          size: [
-            {text: 'S', value: 's'},
-            {text: 'M', value: 'm'},
-            {text: 'L', value: 'l'},
-            {text: 'XL', value: 'xl'}
-          ],
-          selectesSize: '0',
-          cart: []
         },
-        returnCode: '0'
-      }
+        "ret": [
+            "SUCCESS::调用成功"
+        ],
+        "v": "1.0"
     },
-    total: 1,
-    errno: 0,
-    msg: 'OK'
+    "errno": 0,
+    "limit": 10,
+    "msg": "OK",
+    "offset": 0,
+    "total": 1
+
+
+    // data: {
+    //   api: 'hyke.shop',
+    //   data: {
+    //     returnValue: {
+    //       type: '1', // 用这个字段判断衣服类型，不同类型，详情页面不同
+    //       name: '小礼服',
+    //       desc: '山本耀司设计',
+    //       price: 'RMB5288 - 6888',
+    //       id: '1',
+    //       isSelected: true,
+    //       color: [
+    //         {text: '银色', value: '银色'},
+    //         {text: '灰色', value: '灰色'},
+    //         {text: '金色', value: '金色'},
+    //         {text: '玫瑰色', value: '玫瑰色'}
+    //       ],
+    //       selectesColor: '2',
+    //       slideImages: [
+    //         {
+    //           imageWidth: 10,
+    //           brandId: '0',
+    //           id: 't1',
+    //           image: '11111111111111111111111111111122',
+    //           imageHight: 10,
+    //           title: '\u8f6e\u64ad\u56fe1',
+    //           state: '0',
+    //           pdsId: 'pds1'
+    //         },
+    //         {
+    //           imageWidth: 10,
+    //           brandId: '0',
+    //           id: 't2',
+    //           image: '11111111111111111111111111111122',
+    //           imageHight: 10,
+    //           title: '\u8f6e\u64ad\u56fe2',
+    //           state: '0',
+    //           pdsId: 'pds1'
+    //         },
+    //         {
+    //           imageWidth: 10,
+    //           brandId: '0',
+    //           id: 't3',
+    //           image: '11111111111111111111111111111122',
+    //           imageHight: 10,
+    //           title: '\u8f6e\u64ad\u56fe3',
+    //           state: '0',
+    //           pdsId: 'pds1'
+    //         },
+    //         {
+    //           imageWidth: 0,
+    //           brandId: '0',
+    //           id: 't4',
+    //           image: '11111111111111111111111111111122',
+    //           imageHight: 0,
+    //           title: '\u8f6e\u64ad\u56fe4',
+    //           state: '0',
+    //           pdsId: 'pds1'
+    //         }
+    //       ],
+    //       size: [
+    //         {text: 'S', value: 's'},
+    //         {text: 'M', value: 'm'},
+    //         {text: 'L', value: 'l'},
+    //         {text: 'XL', value: 'xl'}
+    //       ],
+    //       selectesSize: '0',
+    //       cart: []
+    //     },
+    //     returnCode: '0'
+    //   }
+    // },
+    // total: 1,
+    // errno: 0,
+    // msg: 'OK'
   },
   // 衣箱
   box: {

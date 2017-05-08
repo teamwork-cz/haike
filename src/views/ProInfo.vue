@@ -12,7 +12,9 @@ export default {
       activeStyle: '',
       product: {
       },
-      sku: {}
+      sku: {},
+      selectesColor:0,
+      selectesSize:0,
     }
   },
   components: {
@@ -23,14 +25,14 @@ export default {
     ...mapGetters(['clothesCount']),
     cloth() {
       const cloth = {
-        title: this.product.name,
-        color: this.product.color[this.product.selectesColor].value,
-        size: this.product.size[this.product.selectesSize].value,
-        colors: this.product.color.map(function (itm) {
-          return itm.value
+        title: this.product.activeTitle,
+        color: this.product.colorList[this.selectesColor].pname,
+        size: this.product.sizeList[this.selectesSize].pname,
+        colors: this.product.colorList.map(function (itm) {
+          return itm.pname
         }),
-        sizes: this.product.size.map(function (itm) {
-          return itm.value
+        sizes: this.product.sizeList.map(function (itm) {
+          return itm.pname
         })
       }
       return cloth
@@ -45,13 +47,13 @@ export default {
 
     ]),
     ...mapActions(['updateClothes']),
-    selectesColor(item, index) {
+    selectedColor(item, index) {
       console.log(item)
       this.sku.color = item
-      this.product.selectesColor = index;
+      this.selectesColor = index;
     },
-    selectesSize(item, index) {
-      this.product.selectesSize = index;
+    selectedSize(item, index) {
+      this.selectesSize = index;
       this.sku.size = item
     },
     goRoute(route) {
@@ -138,30 +140,33 @@ export default {
       </section>
   
       <section class="">
-        <swiper :imgs="product.slideImages"></swiper>
+        <swiper :imgs="product.imags"></swiper>
       </section>
       <div class="bgw pl15 pr15">
         <div class="detail">
           <div class="pt15 pb10">
-            <h3 class="name "><span >{{product.name||''}}</span></h3>
-            <h4 class="f12 gray">价格：<span class="red f16" >￥</span><span class="red f16" v-text="product.price"></span></h4>
+            <h3 class="name "><span >{{product.activeTitle||''}}</span></h3>
+            <h4 class="f12 gray">价格：<span class="red f16" >￥</span>
+              <span class="red f16" v-text="product.sellPrice" v-show="product.type==1"></span>
+               <span class="red f16" v-text="product.rentPrice" v-show="product.type==2"></span>
+            </h4>
           </div>
   
           <div class="options flexBox flex-col flex-cross-start border-top pt10 pb5">
             <div class="f14 ">选择尺码：</div>
             <ul class="flexBox flex-row flex-wrap pt10">
-              <li v-for="(item,index) in product.color"
-                  @click="selectesColor(item,index)"
-                  :class="{active: index  == product.selectesColor}">
-                <span v-text="item.text"></span>
+              <li v-for="(item,index) in product.sizeList"
+                  @click="selectedSize(item,index)"
+                  :class="{active: index  == selectesSize}">
+                <span v-text="item.pname"></span>
               </li>
             </ul>
             <div class="f14 ">选择颜色:</div>
             <ul class="flexBox flex-row flex-wrap">
-              <li v-for="(item,index) in product.size"
-                  @click="selectesSize(item,index)"
-                  :class="{active: index  == product.selectesSize}">
-                <span v-text="item.text"></span>
+              <li v-for="(item,index) in product.colorList"
+                  @click="selectedColor(item,index)"
+                  :class="{active: index  == selectesColor}">
+                <span v-text="item.pname"></span>
               </li>
             </ul>
           </div>
@@ -171,7 +176,7 @@ export default {
       <!-- 免费试穿 -->
       <section class="gray  p15 bgw"
                @click="openSC()"
-               v-if="product.type=='lifu'">
+               v-if="product.type=='2'">
         <mt-button type="default"
                    class="wp100 f14">
           免费试穿
@@ -182,32 +187,25 @@ export default {
       <section class="bgw mt10 p10 pt15" id="probadge">
         <div class="tc centerText">礼服信息</div>
         <div class="badgeList pt20">
-          <mt-badge size="small"
-                    color="#ccc">礼服</mt-badge>
-          <mt-badge size="small"
-                    color="#ccc">礼服</mt-badge>
-          <mt-badge size="small"
-                    color="#ccc">礼服</mt-badge>
-          <mt-badge size="small"
-                    color="#ccc">礼服</mt-badge>
-          <mt-badge size="small"
-                    color="#ccc">礼服</mt-badge>
-          <mt-badge size="small"
-                    color="#ccc">礼服</mt-badge>
+          <mt-badge size="small" v-for="item in product.keys"
+                    color="#ccc">{{item}}</mt-badge>
         </div>
         <div class="otherInfo mt26">
           <mt-cell class="bgw f14"
-                   title="标题文字"
-                   value="说明文字"></mt-cell>
-          <mt-cell class="bgw f14"
-                   title="标题文字"
-                   value="说明文字"></mt-cell>
-          <mt-cell class="bgw f14"
-                   title="标题文字"
-                   value="说明文字"></mt-cell>
-          <mt-cell class="bgw f14"
-                   title="标题文字"
-                   value="说明文字"></mt-cell>
+                   title="市场价"
+                   :value="product.originalPrice"></mt-cell>
+             <mt-cell class="bgw f14"
+                   title="品牌"
+                   :value="product.brandName"></mt-cell>
+             <mt-cell class="bgw f14"
+                   title="颜色"
+                   :value="product.purchaseDescription.colorlist"></mt-cell>
+            <mt-cell class="bgw f14"
+                   title="品类"
+                   :value="product.purchaseDescription.xilielist"></mt-cell>
+           <mt-cell class="bgw f14"
+                   title="材质"
+                   :value="product.purchaseDescription.materiallist"></mt-cell>
   
         </div>
       </section>
