@@ -15,7 +15,7 @@ const requestApi = {
     method: 'post'
   },
   reg: {
-    url: '/reg',
+    url: '/account/register',
     method: 'post'
   },
   topSlides: {},
