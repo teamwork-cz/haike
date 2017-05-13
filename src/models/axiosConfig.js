@@ -1,6 +1,6 @@
 
 export default {
-  baseURL: 'http://rapapi.org/mockjsdata/17098',
+  baseURL: 'http://www.hykeyun.com',
   timeout: 30000,
   method: 'post', // default
   transformRequest: [
