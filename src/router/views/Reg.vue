@@ -52,8 +52,8 @@
         </div>
     
         <!--    <mt-popup v-model="popupVisible" position="bottom" class="mint-popup-2" :modal="false">
-                  <p>更新成功</p>
-                </mt-popup> -->
+                              <p>更新成功</p>
+                            </mt-popup> -->
     
     </div>
 </template>
@@ -75,7 +75,7 @@ export default {
             close: true,
             valcode: '',
             time: 0,
-            phoneNo:'',
+            phoneNo: '',
             popupVisible: false,
 
         }
@@ -93,7 +93,33 @@ export default {
             // this.popupVisible==true;
             console.log(this.name)
             console.log(this.password)
-            this.$router.replace({ name: this.nextPath })
+            if (!this.phoneNo || !this.password || !this.valcode) {
+                this.$toast("信息输入有误")
+                return
+            }
+            this.$reqData.req({
+                apiName: 'reg',
+                params: {
+                    phoneNo: this.phoneNo,
+                    phoneCode: this.valcode,
+                    phoneToken: this.phoneToken,
+                    pwd: this.password,
+                    pwd1: this.password
+                }
+            }).then((res) => {
+                console.log(res)
+                res = res.data
+                if (res.errno !== 0) {
+                    this.$toast(res.msg)
+                    return
+                }
+                this.$router.replace({ name: this.nextPath })
+            }).catch(() => {
+                this.completeLoad()
+                this.clickLoadStatus = false
+                this.$toast('系统异常')
+            })
+
         },
         pwchange() {
             this.close = !this.close;
@@ -120,6 +146,8 @@ export default {
                     this.$toast(res.msg)
                     return
                 }
+                res = res.returnValue
+                this.phoneToken = res.phoneToken
             }).catch(() => {
                 this.completeLoad()
                 this.clickLoadStatus = false
