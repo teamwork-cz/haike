@@ -11,9 +11,9 @@
         <div class="bgw p15 top44"
              style="padding-top: 50px">
             <x-input name="username"
-                     placeholder="请输入姓名"
+                     placeholder="请输入手机号"
                      v-model="phoneNo"
-                     is-type="mobile"></x-input>
+                     is-type="mobile" maxlength="11"></x-input>
             <x-input placeholder="发送验证码"
                      v-model="valcode"
                      type="text">
@@ -115,7 +115,7 @@ export default {
                 }
                 this.$router.replace({ name: this.nextPath })
             }).catch(() => {
-                this.completeLoad()
+                // this.completeLoad()
                 this.clickLoadStatus = false
                 this.$toast('系统异常')
             })
@@ -149,7 +149,7 @@ export default {
                 res = res.returnValue
                 this.phoneToken = res.phoneToken
             }).catch(() => {
-                this.completeLoad()
+                // this.completeLoad()
                 this.clickLoadStatus = false
                 this.$toast('系统异常')
             })

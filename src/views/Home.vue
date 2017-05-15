@@ -152,7 +152,7 @@ export default {
     this.pushLoadStack()
     this.$reqData.req({
       apiName: 'topSlides',
-      url: '/appMainTop',
+      url: '/appMainTop/l',
       method: 'get'
     }).then((res) => {
       this.clickLoadStatus = false

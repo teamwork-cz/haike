@@ -32,25 +32,31 @@
     <section class="bgw ">
       <div class="flexBox heth40 flex-row flex-main-arount">
         <div @click='showChanghe=!showChanghe' @blur='changheBlur'>
-          <span class="vm city-name f14 ">场合</span>
+          <span class="vm city-name f14 ">尺寸</span>
           <span class="city-arrow-icon vm"></span>
         </div>
-        <div @click='sellCountChange'>
-          <span class="vm city-name f14">销量</span>
-          <span class="arrow-up vm"></span>
+        <div @click='sellCountChange'  :class="{'sellCountactive':sellCountUp}">
+          <span class="vm  f14 xiaoliang">销量</span>
+          <span class="arrow-up vm "></span>
         </div>
         <div>
-          <span class="vm city-name f14">帅选</span>
-          <span class="select vm"></span>
+           <filterPro></filterPro>
+         <!--  <span class="vm city-name f14" @click='opSX()'>筛选</span>
+          <span class="select vm"></span> -->
         </div>
       </div>
     </section>
     <div v-show="showChanghe" 
          class="changhe flexBox flex-row flex-main-arount flex-no-wrap">
-      <div class="flex1" @click='chClick("ch1")' :class='{active:changhe==="ch1"}'>酒会/年会</div>
-      <div class="flex1"  @click='chClick("ch2")'  :class='{active:changhe==="ch2"}'>派对</div>
-      <div class="flex1"  @click='chClick("ch3")'  :class='{active:changhe==="ch3"}'>婚礼</div>
-      <div class="flex1"  @click='chClick("ch4")'  :class='{active:changhe==="ch4"}'>晚宴</div>
+      <div class="flex1" @click='chClick("ch1")' :class='{active:changhe==="ch1"}'>S</div>
+      <div class="flex1"  @click='chClick("ch2")'  :class='{active:changhe==="ch2"}'>M</div>
+      <div class="flex1"  @click='chClick("ch3")'  :class='{active:changhe==="ch3"}'>L</div>
+      <div class="flex1"  @click='chClick("ch4")'  :class='{active:changhe==="ch4"}'>1XL</div>
+      <div class="flex1"  @click='chClick("ch5")'  :class='{active:changhe==="ch5"}'>2XL</div>
+      <div class="flex1"  @click='chClick("ch6")'  :class='{active:changhe==="ch6"}'>3XL</div>
+      <div class="flex1"  @click='chClick("ch7")'  :class='{active:changhe==="ch7"}'>4XL</div>
+      <div class="flex1"  @click='chClick("ch8")'  :class='{active:changhe==="ch8"}'>5XL</div>
+
     </div>
   
     <section class="itemofPro mt5">
@@ -60,7 +66,7 @@
             :lfLists='lfLists'></Lifu>
     </section>
   
-    <!-- <filterPro></filterPro> -->
+   
     <arrowUp></arrowUp>
   </section>
 </template>
@@ -82,7 +88,7 @@ export default {
       searchValue: '',
       byLists: [],
       lfLists: [],
-      changhe:'ch1'
+      changhe:'ch1',
     }
   },
   components: {
@@ -189,6 +195,10 @@ export default {
       //销量查询条件更改
       this.reqParams.property = this.sellProperty
       this.getHiSelect()
+    },
+    //打开筛选框
+    opSX(){
+
     }
   },
   created() {
@@ -267,5 +277,6 @@ image[lazy=loading] {
   background: #ff2c43;
   display: none;
 }
+
 </style>
 

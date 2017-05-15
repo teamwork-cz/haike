@@ -39,7 +39,7 @@
                          @click="handleClick(item,index)">
                          <div>颜色分类:{{item.color}},尺码:{{item.size}} </div>
                          <div class="arrow_down_right"></div>
-                         </div>
+                    </div>
                   </div>
                 </div>
               </mt-cell-swipe>

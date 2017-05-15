@@ -98,6 +98,13 @@ export default {
   },
   created() {
     this.pushLoadStack()
+    //请求参数
+    this.reqParams = {
+      pdsId: 'a3',
+    }
+
+  
+
     this.$reqData.req({
       apiName: 'detail',
     }).then((res) => {

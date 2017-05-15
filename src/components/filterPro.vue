@@ -1,18 +1,116 @@
 <template>
-  <section style="">
-     <div class="mask">
-       <div class="bgw filterPro">
-          frfrfrfff
-       </div>
-     </div>
+  <section style="" id="filterPro">
+    <span class="vm city-name f14" @click='openPicker()'>筛选</span>
+    <span class="select vm"></span>
+  <mt-popup
+  v-model="popupVisible"
+  position="right"
+  popup-transition="popup-fade" 
+ 
+  > 
+<div class="pl10">
+  <div class="priceItem top44 f14">
+    <div class="">价格区间</div>
+    <input type="number" placeholder="最低价"> - <input type="number" placeholder="最高价">
+  </div>
+  <div class="brandItem  f14 mb100">
+     <mt-cell title="品牌" is-link value="全部"></mt-cell>
+       <div class="flexBox flex-row flex-wrap ">
+            <div class="itemInput  active">ABS</div>
+            <div class="itemInput ">ABS</div>
+            <div class="itemInput ">ABS</div>
+            <div id="D" style="display:none;border:1px solid red;margin-top:10px;width:200px;line-height:180%;"></div>
+      </div>    
+  </div>
+</div>
+
+<div class="filterButton f18 flexBox flex-row flex-main-arount">
+ <div class="flex1 refilter">重置</div>
+  <div class="flex1 surefilter">确定</div>
+</div>
+</mt-popup>
 
   </section>
 </template>
-
+<script>
+import { Picker } from 'mint-ui';
+  export default{
+  data() {
+    return {
+      popupVisible:false,
+      showToolbar:true,
+      selectVal:"",
+   
+    }
+  },
+  components: {
+    Picker
+  },
+  methods:{
+    openPicker() {
+       this.popupVisible = true
+      },
+   onValuesChange(picker, values){
+      console.log(values[0]);
+      this.selectVal=values[0];
+      },
+   comfirm(){
+    this.popupVisible = false;
+   },
+   cancel(){
+   this.popupVisible = false;
+   }
+  }
+}
+</script>
 <style>
- .filterPro{
-    margin-left: 100px;
-    height: 100%;
-    padding-top: 15px;
- }
+#filterPro .mint-popup-right{
+  height: 100%;
+  width: 80%
+}
+.priceItem input{
+    height: 25px;
+    width: 100px;
+    background: #F0F2F5;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+.itemInput{
+    width: 65px;
+    background-color: #F0F2F5;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px
+}
+.itemInput.active{
+   color: #FF3F71;
+   width: 63px;
+   background-color: #fff;
+   border:1px solid #FF3F71;
+}
+.filterButton{
+  position: fixed;
+    bottom: 50px;
+    height: 50px;
+    line-height: 50px;
+    width: 100%
+}
+.refilter{
+      border-bottom: 1px solid #ccc;
+       border-top: 1px solid #ccc;
+    width: 50%;
+    text-align: center;
+}
+.surefilter{
+      width: 50%;
+    text-align: center;
+
+    color: #fff;
+    background-color: #ff3f71;
+}
 </style>
