@@ -13,15 +13,41 @@
     <div class="">价格区间</div>
     <input type="number" placeholder="最低价"> - <input type="number" placeholder="最高价">
   </div>
-  <div class="brandItem  f14 mb100">
-     <mt-cell title="品牌" is-link value="全部"></mt-cell>
-       <div class="flexBox flex-row flex-wrap ">
+  <div class="filterItem  f14 ">
+     <div class="flex-row flexBox flex-main-between ">
+       <div>品牌</div>
+       <div class="flex-row flexBox flex-main-between flex-cross-center">
+        <div class="pr10">全部</div> 
+        <icon class="arrow_down_right mr10"  :class="{ 'arrow_down_right': arrowDown, 'arrow_up_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
+       </div>
+     </div>
+       <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': !arrowDown }">
             <div class="itemInput  active">ABS</div>
             <div class="itemInput ">ABS</div>
             <div class="itemInput ">ABS</div>
-            <div id="D" style="display:none;border:1px solid red;margin-top:10px;width:200px;line-height:180%;"></div>
+            <div class="itemInput ">ABS</div>
+            <div class="itemInput ">ABS</div>
+            <div class="itemInput ">ABS</div>
       </div>    
   </div>
+
+
+<!--     <div class="filterItem  f14 ">
+     <div class="flex-row flexBox flex-main-between ">
+       <div>长度</div>
+       <div class="flex-row flexBox flex-main-between flex-cross-center">
+        <div class="pr10">全部</div> 
+        <icon class="arrow_down_right mr10"  :class="{ 'arrow_down_right': arrowDown, 'arrow_up_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
+       </div>
+     </div>
+       <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': !arrowDown }">
+            <div class="itemInput  active">即膝</div>
+            <div class="itemInput ">迷你</div>
+            <div class="itemInput ">连衣裙</div>
+             <div class="itemInput ">等等</div>
+      </div>    
+  </div> -->
+
 </div>
 
 <div class="filterButton f18 flexBox flex-row flex-main-arount">
@@ -40,6 +66,7 @@ import { Picker } from 'mint-ui';
       popupVisible:false,
       showToolbar:true,
       selectVal:"",
+      arrowDown:false
    
     }
   },
@@ -112,5 +139,9 @@ import { Picker } from 'mint-ui';
 
     color: #fff;
     background-color: #ff3f71;
+}
+.ht50{
+  height: 27px !important;
+  overflow: hidden;
 }
 </style>
