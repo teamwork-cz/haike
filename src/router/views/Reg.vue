@@ -77,6 +77,7 @@ export default {
             time: 0,
             phoneNo: '',
             popupVisible: false,
+            phoneToken:''
 
         }
     },
@@ -141,13 +142,11 @@ export default {
                 }
             }).then((res) => {
                 console.log(res)
-                res = res.data
-                if (res.errno !== 0) {
-                    this.$toast(res.msg)
+                 if (res.data.errno !== 0) {
+                    this.$toast(res.data.msg)
                     return
                 }
-                res = res.returnValue
-                this.phoneToken = res.phoneToken
+                 this.phoneToken = res.data.data.data.returnValue.phoneToken
             }).catch(() => {
                 // this.completeLoad()
                 this.clickLoadStatus = false

@@ -13,21 +13,18 @@
     <div class="">价格区间</div>
     <input type="number" placeholder="最低价"> - <input type="number" placeholder="最高价">
   </div>
-  <div class="filterItem  f14 ">
+  <div class="filterItem  f14 " v-for="item in data">
      <div class="flex-row flexBox flex-main-between ">
-       <div>品牌</div>
+       <div>{{item.pname}}</div>
        <div class="flex-row flexBox flex-main-between flex-cross-center">
         <div class="pr10">全部</div> 
-        <icon class="arrow_down_right mr10"  :class="{ 'arrow_down_right': arrowDown, 'arrow_up_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
+        <icon class="arrow_down_right mr10"  :class="{ 'arrow_up_right': arrowDown, 'arrow_down_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
        </div>
      </div>
        <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': !arrowDown }">
-            <div class="itemInput  active">ABS</div>
-            <div class="itemInput ">ABS</div>
-            <div class="itemInput ">ABS</div>
-            <div class="itemInput ">ABS</div>
-            <div class="itemInput ">ABS</div>
-            <div class="itemInput ">ABS</div>
+       <!-- 选中的class是给下面这个div加上 .active  @曹华南 -->
+            <div class="itemInput"  v-for="item1 in item.pdsPropertyDs" @click="chooseItem(`${item1.pid}`)" >{{item1.pvalue}}</div>
+          
       </div>    
   </div>
 
@@ -66,7 +63,82 @@ import { Picker } from 'mint-ui';
       popupVisible:false,
       showToolbar:true,
       selectVal:"",
-      arrowDown:false
+      arrowDown:false,
+        data: [
+                {
+                    "pdsPropertyDs": [
+                        {
+                            "pid": "1",
+                            "pvalue": "时尚"
+                        },{
+                            "pid": "1",
+                            "pvalue": "时尚"
+                        },{
+                            "pid": "1",
+                            "pvalue": "时尚"
+                        },{
+                            "pid": "1",
+                            "pvalue": "时尚"
+                        }
+                    ],
+                    "pname": "场合",
+                    "pps": 0
+                },
+                {
+                    "pdsPropertyDs": [
+                        {
+                            "pid": "2",
+                            "pvalue": "淑女"
+                        }
+                    ],
+                    "pname": "上市季节",
+                    "pps": 1
+                },
+                {
+                    "pdsPropertyDs": [
+                        {
+                            "pid": "3",
+                            "pvalue": "休闲"
+                        }
+                    ],
+                    "pname": "长度",
+                    "pps": 2
+                },
+                {
+                    "pdsPropertyDs": [
+                        {
+                            "pid": "4",
+                            "pvalue": "宴会"
+                        }
+                    ],
+                    "pname": "衣服类型",
+                    "pps": 3
+                },
+                {
+                    "pdsPropertyDs": [
+                        {
+                            "pid": "5",
+                            "pvalue": "会议"
+                        }
+                    ],
+                    "pname": "尺码",
+                    "pps": 4
+                },
+                {
+                    "pdsPropertyDs": [
+                        {
+                            "pid": "6",
+                            "pvalue": "时尚"
+                        }, {
+                            "pid": "7",
+                            "pvalue": "时尚"
+                        }
+                    ],
+                    "pname": "色调",
+                    "pps": 5
+                }
+            ]
+
    
     }
   },
@@ -86,6 +158,9 @@ import { Picker } from 'mint-ui';
    },
    cancel(){
    this.popupVisible = false;
+   },
+   chooseItem(pid){
+alert(pid)
    }
   }
 }
