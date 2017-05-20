@@ -1,82 +1,83 @@
 <template>
-  <section style="" id="filterPro">
-    <span class="vm city-name f14" @click='openPicker()'>筛选</span>
-    <span class="select vm"></span>
-  <mt-popup
-  v-model="popupVisible"
-  position="right"
-  popup-transition="popup-fade" 
- 
-  > 
-<div class="pl10">
-  <div class="priceItem top44 f14">
-    <div class="">价格区间</div>
-    <input type="number" placeholder="最低价"> - <input type="number" placeholder="最高价">
-  </div>
-  <div class="filterItem  f14 " v-for="item in data">
-     <div class="flex-row flexBox flex-main-between ">
-       <div>{{item.pname}}</div>
-       <div class="flex-row flexBox flex-main-between flex-cross-center">
-        <div class="pr10">全部</div> 
-        <icon class="arrow_down_right mr10"  :class="{ 'arrow_up_right': arrowDown, 'arrow_down_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
-       </div>
-     </div>
-       <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': !arrowDown }">
-       <!-- 选中的class是给下面这个div加上 .active  @曹华南 -->
-            <div class="itemInput"  v-for="item1 in item.pdsPropertyDs" @click="chooseItem(`${item1.pid}`)" >{{item1.pvalue}}</div>
-          
-      </div>    
-  </div>
-
-
-<!--     <div class="filterItem  f14 ">
-     <div class="flex-row flexBox flex-main-between ">
-       <div>长度</div>
-       <div class="flex-row flexBox flex-main-between flex-cross-center">
-        <div class="pr10">全部</div> 
-        <icon class="arrow_down_right mr10"  :class="{ 'arrow_down_right': arrowDown, 'arrow_up_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
-       </div>
-     </div>
-       <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': !arrowDown }">
-            <div class="itemInput  active">即膝</div>
-            <div class="itemInput ">迷你</div>
-            <div class="itemInput ">连衣裙</div>
-             <div class="itemInput ">等等</div>
-      </div>    
-  </div> -->
-
-</div>
-
-<div class="filterButton f18 flexBox flex-row flex-main-arount">
- <div class="flex1 refilter">重置</div>
-  <div class="flex1 surefilter">确定</div>
-</div>
-</mt-popup>
-
-  </section>
+    <section style="" id="filterPro">
+        <span class="vm city-name f14" @click='openPicker()'>筛选</span>
+        <span class="select vm"></span>
+        <mt-popup v-model="popupVisible" position="right" popup-transition="popup-fade">
+            <div class="pl10">
+                <div class="priceItem top44 f14">
+                    <div class="">价格区间</div>
+                    <input type="number" placeholder="最低价"> -
+                    <input type="number" placeholder="最高价">
+                </div>
+                <div class="filterItem  f14 " v-for="(item,index) in data">
+                    <div class="flex-row flexBox flex-main-between ">
+                        <div>{{item.pname}}</div>
+                        <div class="flex-row flexBox flex-main-between flex-cross-center">
+                            <div class="pr10" :class="{'test':test,'testt':itemCategory[index]}">全部</div>
+                            <icon class="arrow_down_right mr10" :class="{ 'arrow_up_right': itemCategory[index]===true, 'arrow_down_right': itemCategory[index]===false }" @click="clickAll(index)"></icon>
+                        </div>
+                    </div>
+                    <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': itemCategory[index]===false }">
+                        <!-- 选中的class是给下面这个div加上 .active  @曹华南 -->
+                        <div class="itemInput" :class="{'active':itemIndex===itemStatus[index]}" v-for="(item1,itemIndex) in item.pdsPropertyDs" @click="chooseItem(item1.pid,index,itemIndex)">{{item1.pvalue}}</div>
+    
+                    </div>
+                </div>
+    
+                <!--     <div class="filterItem  f14 ">
+                         <div class="flex-row flexBox flex-main-between ">
+                           <div>长度</div>
+                           <div class="flex-row flexBox flex-main-between flex-cross-center">
+                            <div class="pr10">全部</div> 
+                            <icon class="arrow_down_right mr10"  :class="{ 'arrow_down_right': arrowDown, 'arrow_up_right': !arrowDown }"  @click="arrowDown=!arrowDown"></icon>      
+                           </div>
+                         </div>
+                           <div class="flexBox flex-row flex-wrap" :class="{ 'ht50': !arrowDown }">
+                                <div class="itemInput  active">即膝</div>
+                                <div class="itemInput ">迷你</div>
+                                <div class="itemInput ">连衣裙</div>
+                                 <div class="itemInput ">等等</div>
+                          </div>    
+                      </div> -->
+    
+            </div>
+    
+            <div class="filterButton f18 flexBox flex-row flex-main-arount">
+                <div class="flex1 refilter">重置</div>
+                <div class="flex1 surefilter">确定</div>
+            </div>
+        </mt-popup>
+    
+    </section>
 </template>
 <script>
 import { Picker } from 'mint-ui';
-  export default{
-  data() {
-    return {
-      popupVisible:false,
-      showToolbar:true,
-      selectVal:"",
-      arrowDown:false,
-        data: [
+export default {
+    data() {
+        return {
+            popupVisible: false,
+            showToolbar: true,
+            selectVal: "",
+            //筛选项目类别
+            itemCategory: '',
+            test: false,
+            //类别下的哪些项
+            itemStatus: '',
+
+            arrowDown: false,
+            data: [
                 {
                     "pdsPropertyDs": [
                         {
                             "pid": "1",
                             "pvalue": "时尚"
-                        },{
+                        }, {
                             "pid": "1",
                             "pvalue": "时尚"
-                        },{
+                        }, {
                             "pid": "1",
                             "pvalue": "时尚"
-                        },{
+                        }, {
                             "pid": "1",
                             "pvalue": "时尚"
                         }
@@ -139,38 +140,55 @@ import { Picker } from 'mint-ui';
                 }
             ]
 
-   
+
+        }
+    },
+    components: {
+        Picker
+    },
+    created() {
+        //初始化 itemCategory
+        const l = this.data.length
+        this.itemCategory = {}
+        this.itemStatus = {}
+        for (var i = 0; i < l; i++) {
+            this.itemCategory[i] = false //false代表 全部没有打开
+            this.itemStatus[i] = ''
+        }
+    },
+    methods: {
+        openPicker() {
+            this.popupVisible = true
+        },
+        onValuesChange(picker, values) {
+            console.log(values[0]);
+            this.selectVal = values[0];
+        },
+        comfirm() {
+            this.popupVisible = false;
+        },
+        cancel() {
+            this.popupVisible = false;
+        },
+        chooseItem(pid, index, itemIndex) {
+            this.test = !this.test
+            this.itemStatus[index] = itemIndex
+            console.log(pid)
+        },
+        clickAll(index) {
+            this.test = !this.test
+            this.itemCategory[index] = !this.itemCategory[index]
+        }
     }
-  },
-  components: {
-    Picker
-  },
-  methods:{
-    openPicker() {
-       this.popupVisible = true
-      },
-   onValuesChange(picker, values){
-      console.log(values[0]);
-      this.selectVal=values[0];
-      },
-   comfirm(){
-    this.popupVisible = false;
-   },
-   cancel(){
-   this.popupVisible = false;
-   },
-   chooseItem(pid){
-alert(pid)
-   }
-  }
 }
 </script>
 <style>
-#filterPro .mint-popup-right{
-  height: 100%;
-  width: 80%
+#filterPro .mint-popup-right {
+    height: 100%;
+    width: 80%
 }
-.priceItem input{
+
+.priceItem input {
     height: 25px;
     width: 100px;
     background: #F0F2F5;
@@ -178,7 +196,8 @@ alert(pid)
     text-align: center;
     border-radius: 5px;
 }
-.itemInput{
+
+.itemInput {
     width: 65px;
     background-color: #F0F2F5;
     height: 25px;
@@ -189,34 +208,39 @@ alert(pid)
     margin-bottom: 15px;
     border-radius: 10px
 }
-.itemInput.active{
-   color: #FF3F71;
-   width: 63px;
-   background-color: #fff;
-   border:1px solid #FF3F71;
+
+.itemInput.active {
+    color: #FF3F71;
+    width: 63px;
+    background-color: #fff;
+    border: 1px solid #FF3F71;
 }
-.filterButton{
-  position: fixed;
+
+.filterButton {
+    position: fixed;
     bottom: 50px;
     height: 50px;
     line-height: 50px;
     width: 100%
 }
-.refilter{
-      border-bottom: 1px solid #ccc;
-       border-top: 1px solid #ccc;
+
+.refilter {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     width: 50%;
     text-align: center;
 }
-.surefilter{
-      width: 50%;
+
+.surefilter {
+    width: 50%;
     text-align: center;
 
     color: #fff;
     background-color: #ff3f71;
 }
-.ht50{
-  height: 27px !important;
-  overflow: hidden;
+
+.ht50 {
+    height: 27px !important;
+    overflow: hidden;
 }
 </style>
