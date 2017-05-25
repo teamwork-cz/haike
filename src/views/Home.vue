@@ -20,7 +20,7 @@
       
       <swiper :imgs="imgs"></swiper>
       <div class="labelDecribe"></div>
-  
+<!--  
       <div class=" flexBox flex-row flex-main-arount flex-main-center bgw pt20 pb20  mt10">
         <div class="item ">
           <div class="group group_new mc"></div>新品上市
@@ -31,7 +31,7 @@
           <div class="group group_des mc"></div>设计师</div>
         <div class="item ">
           <div class="group group_sale mc"></div>折扣专区</div>
-      </div>
+      </div>-->
       <hot :hotLists="hotLists"></hot>
       
     </section>
